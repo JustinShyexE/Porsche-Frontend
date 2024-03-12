@@ -1,0 +1,401 @@
+body{
+  margin: 0px;
+}
+
+.header{
+  background-color: #181818;
+  height: 65px;
+  }
+.logo{
+  color: white;
+  margin: 0px;
+  font-size: 35px;
+  letter-spacing: 10px;
+  display: flex;
+  justify-content: center;
+}
+.btn3{
+  margin: 0px;
+  color: white;
+  text-decoration: none;
+  width: 0%;
+  transition: 0.5s
+}
+
+
+/*Navbar Buttons*/
+.btn {
+  text-decoration: none;
+  display: inline-block;
+  position: relative;
+  color: white;
+}
+
+.btn::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  transform-origin: bottom right;
+  transition: transform 0.35s ease-out;
+}
+
+.btn:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+/*Navbar Buttons*/
+
+
+.btn1_position{
+  position: relative;
+  top: 25px;
+  left: 70px;
+  display: inline-flex;
+  gap: 50px;
+  font-size: 20px;
+}
+
+
+
+.underHeaderON{
+  position: absolute;
+  background: #181818;
+  animation: underHeaderr .25s;
+  width: 100%; height: 500px;
+  animation-duration: 0.5s;
+}
+
+@keyframes underHeaderr {
+  from {
+    height: 0px;
+  }
+  to {
+    height: 500px;
+  }
+}
+
+
+.underHeaderOFF{
+  position: absolute;
+  background: #181818;
+  animation: underHeader .25s;
+  width: 100%; height: 0px;
+  animation-duration: 0.25s;
+}
+
+@keyframes underHeader {
+  from {
+    height: 500px;
+  }
+  to {
+    height: 0px;
+  }
+}
+
+.underButtonA_div{
+  height: 70px;
+  width: 150px;
+  margin-top: 2px;
+}
+
+.underButtonA{
+   font-size:17px;
+   color: white;
+   font-family: "Roboto", sans-serif;
+   font-weight: 300;
+   font-style: normal;
+   transition: color 0.3s ease-out 0s;
+   text-decoration-line: none;
+}
+.underButtonB{
+  width: 150px;
+  font-size:17px;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  text-decoration-line: none;
+}
+
+.Row1{
+  position: relative;
+  left: 70px;
+  top:25px;
+  width: 150px;
+  height: 350px;
+  display: block;
+  line-height: 50px;
+}
+
+
+.container{
+  display:inline-flex;
+  flex-flow: row wrap;
+  position: absolute;
+  left: 80px;
+  top:-27px;
+  width: 2300px;
+  height: 360px;
+  padding-left: 100px;
+  background-color: #181818;
+  padding-top: 80px;
+}
+
+
+.car_container{
+  width: 282px;
+  height: 178px;
+  margin: 20px;
+  margin-top: 0px;
+}
+
+.textPosition{
+  position: relative;
+  top: -50px;
+  text-align: center;
+  color: white;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+}
+a{
+  text-decoration: none;
+}
+
+.car_container{
+  transition: transform 0.3s ease;
+}
+
+.car_container:hover {
+  transform: scale(1.1);
+}
+.car_container:hover{
+  transform: scale(1.1);
+}
+
+.accountIcon{
+  position: absolute;
+  top: 15px;
+  right: 200px;
+  padding: 5px;
+}
+
+.accountIcon:hover{
+  background-color: grey;
+  border-radius: 8px;
+}
+
+.accountIconPosition{
+  right: 250px;
+}
+
+.locationON{
+  position: absolute;
+  right: 100px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background: #181818;
+  animation: locationONN .25s;
+  max-width: 500px; min-height: 200px;
+  animation-duration: 0.5s;
+}
+
+@keyframes locationONN {
+  from {
+    min-height: 0px;
+  }
+  to {
+    min-height: 200px;
+  }
+}
+
+
+.locationOFF{
+  position: absolute;
+  right: 100px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background: #181818;
+  animation: locationOff .25s;
+  width: 500px; min-height: 0px;
+  animation-duration: 0.5s;
+}
+
+@keyframes locationOff {
+  from {
+    min-height: 200px;
+  }
+  to {
+    min-height: 0px;
+  }
+}
+
+.locationInput{
+  width: 400px;
+  height: 35px;
+  border-radius: 20px;
+  padding-left: 15px;
+  font-style: normal;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-style: normal;
+  position: relative;
+  top: 80px;
+  left: 50px;
+  animation: locationInputt .25s;
+  animation-duration: 0.5s;
+
+}
+.loop{
+  width: 24px;
+  height: 24px;
+  position: relative;
+  top: 86px;
+  left: 17px;
+  animation: loopp .25s;
+  animation-duration: 0.5s;
+}
+.title{
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 30px;
+  font-style: normal;
+  color: #fff;
+  position: absolute;
+  left: 160px;
+  top:-10px;
+  animation: titlee .25s;
+  animation-duration: 0.5s;
+}
+@keyframes titlee {
+  from {top: 0px; }to { top:-10px;}
+}
+
+@keyframes loopp {
+  from {top: 0px; }to { top:86px;}
+}
+
+@keyframes locationInputt {
+  from {top: 0px; }to { top:80px;}
+}
+.Row2{
+  left:270px;
+}
+.Row3{
+  left: 460px;
+}
+
+
+@media (max-width: 1600px){
+  .logo{
+    margin-left: 450px;
+  }
+  .accountIcon{
+    position: absolute;
+    right: 20px;
+  }
+  .accountIconPosition{
+    right: 60px;
+  }
+}
+
+@media (max-width: 1300px){
+  .logo{
+    margin-left: 450px;
+  }
+  .accountIcon{
+    position: absolute;
+    right: 20px;
+  }
+  .accountIconPosition{
+    right: 60px;
+  }
+  .container{
+    display: none;
+  }
+}
+
+@media (max-width: 830px){
+  .logo{
+    margin-left: 0px;
+  }
+  .header{
+    height: 100px;
+    }
+  .btn {
+      top: 40px
+    }
+    .btn1_position{
+      left: 150px;
+      gap: 50px;
+    }
+    .btn1_position{
+      left: 20px;
+      gap: 50px;
+    }
+    .container{
+      display: none;
+    }
+    .underHeaderON{
+      top:110px;
+    }
+    .Row2{
+      left:50px;
+    }
+    .Row3{
+      left: 50px;
+    }
+    .locationON{
+      right: 0px;
+      left: 0px;
+    }
+}
+
+@media (max-width: 481px){
+  .logo{
+    margin-left: 0px;
+    position: relative;
+    
+  }
+  .header{
+    height: 120px;
+    }
+  .btn {
+      top: 40px;
+      display: inline-flex
+    }
+    .btn1_position{
+      position: relative;
+      top: 25px;
+      left: 20px;
+      display: inline-flex;
+      gap: 20px;
+    }
+    .container{
+      display: none;
+    }
+    .underHeaderON{
+      top:110px;
+    }
+    .Row2{
+      left:50px;
+    }
+    .Row3{
+      left: 50px;
+    }
+    .locationON{
+      right: 0px;
+      left: 0px;
+    }
+}
+
+@media (max-width: 389px){
+  .logo{
+    bottom: 20px;
+    left: -20px;
+  }
+}
