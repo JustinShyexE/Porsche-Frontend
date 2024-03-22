@@ -15,7 +15,7 @@ function Button2B(props){
       }
     
     return (<div>
-      <div onMouseLeave={SetClickOFF} onMouseOver={SetClickON}  style={{width:'300px'}} className="underButtonA_div"><a className={click? "underButtonB" : "underButtonA"} href="/">{props.text}</a></div>
+      <div onMouseLeave={SetClickOFF} onMouseOver={SetClickON}  style={{width:'300px'}} className="underButtonA_div"><a className={click? "underButtonB" : "underButtonA"}  href="/">{props.text}</a></div>
       </div>)
 }
 

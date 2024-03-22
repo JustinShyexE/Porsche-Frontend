@@ -2,6 +2,13 @@ body{
   margin: 0px;
 }
 
+/*Removing x btn from input search*/
+[type="search"]::-webkit-search-cancel-button,
+[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
 .header{
   background-color: #181818;
   height: 65px;
@@ -123,6 +130,7 @@ body{
 }
 
 .Row1{
+  display: none;
   position: relative;
   left: 70px;
   top:25px;
@@ -131,21 +139,29 @@ body{
   display: block;
   line-height: 50px;
 }
-
-
 .container{
   display:inline-flex;
   flex-flow: row wrap;
   position: absolute;
   left: 80px;
   top:-27px;
-  width: 2300px;
-  height: 360px;
+  min-width: 2400px;
+  height: 420px;
   padding-left: 100px;
   background-color: #181818;
   padding-top: 80px;
-}
+  animation: containerr .25s;
+  animation-duration: 0.25s;
+  }
 
+  @keyframes containerr {
+    from {
+      height: 0px;
+    }
+    to {
+      height: 420px;
+    }
+  }
 
 .car_container{
   width: 282px;
@@ -193,17 +209,20 @@ a{
   right: 250px;
 }
 
+
+
+/*Location Icon Bar Opening and Closing -->*/
 .locationON{
   position: absolute;
-  right: 100px;
+  right: 200px;
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
   background: #181818;
   animation: locationONN .25s;
-  max-width: 500px; min-height: 200px;
+  min-width: 400px;
+  max-width: 400px; min-height: 200px;
   animation-duration: 0.5s;
 }
-
 @keyframes locationONN {
   from {
     min-height: 0px;
@@ -212,20 +231,18 @@ a{
     min-height: 200px;
   }
 }
-
-
 .locationOFF{
   position: absolute;
-  right: 100px;
+  right: 200px;
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
   background: #181818;
-  animation: locationOff .25s;
-  width: 500px; min-height: 0px;
+  animation: locationOfff .25s;
+  min-width: 400px;
+  max-width: 400px; min-height: 0px;
   animation-duration: 0.5s;
 }
-
-@keyframes locationOff {
+@keyframes locationOfff {
   from {
     min-height: 200px;
   }
@@ -234,54 +251,58 @@ a{
   }
 }
 
+.locationInputPos{
+   min-width: 200px;
+   max-width: 400px;
+   height: 50px;
+   margin-left: 12px;
+   margin-right: 12px;
+}
 .locationInput{
-  width: 400px;
+  min-width: 100%;
+  width: 100%;
   height: 35px;
   border-radius: 20px;
   padding-left: 15px;
   font-style: normal;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
-  font-style: normal;
-  position: relative;
-  top: 80px;
-  left: 50px;
-  animation: locationInputt .25s;
-  animation-duration: 0.5s;
-
 }
-.loop{
-  width: 24px;
-  height: 24px;
-  position: relative;
-  top: 86px;
-  left: 17px;
-  animation: loopp .25s;
+.title_inputSpace{
+  margin-top: 60px;
+  animation: title_inputSpacee .25s;
   animation-duration: 0.5s;
+}
+@keyframes title_inputSpacee {
+  from {margin-top: 0px;}to { margin-top: 60px;}
 }
 .title{
+  margin: 0px;
   font-family: "Roboto", sans-serif;
   font-weight: 500;
   font-size: 30px;
   font-style: normal;
   color: #fff;
-  position: absolute;
-  left: 160px;
-  top:-10px;
+  max-width: 200px;
+  position: relative;
+  top: 20px;
+  left: 100px;
   animation: titlee .25s;
   animation-duration: 0.5s;
 }
 @keyframes titlee {
-  from {top: 0px; }to { top:-10px;}
+  from {top: 0px; }to { top:20px;}
 }
+.loop{
+    width: 24px;
+    height: 24px;
+    padding-right: 5px;
+    position: relative;
+    top: -30px;
+    left: 346px;
+  }
+/* <--Location Icon Bar Opening and Closing*/
 
-@keyframes loopp {
-  from {top: 0px; }to { top:86px;}
-}
-
-@keyframes locationInputt {
-  from {top: 0px; }to { top:80px;}
-}
 .Row2{
   left:270px;
 }
@@ -289,6 +310,74 @@ a{
   left: 460px;
 }
 
+/*Adding Styled Scrollbar*/
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+/*Adding Styled Scrollbar*/
+
+
+
+
+
+
+
+
+/*Different Sizes*/
+
+@media (max-width: 2380px){
+  .container{
+    min-width: 2000px;
+  }
+}
+
+
+@media (max-width: 2180px){
+  .container{
+    min-width: 1800px;
+  }
+}
+
+@media (min-width: 1900px) and (max-width: 2150px){
+  .container{
+    min-width: 1700px;
+  }
+}
+
+@media (max-width: 1900px){
+  .container{
+    min-width: 1700px;
+    overflow-y: auto;
+  }
+}
+@media (min-width: 1700px) and (max-width: 1840px){
+  .container{
+    min-width: 1700px;
+    overflow-y: auto;
+  }
+}
+
+@media (min-width: 1600px) and (max-width: 1700px){
+  .container{
+    min-width: 1350px;
+    max-width: 100%;
+  }
+}
 
 @media (max-width: 1600px){
   .logo{
@@ -300,6 +389,16 @@ a{
   }
   .accountIconPosition{
     right: 60px;
+  }
+  .container{
+    min-width: 1055px;
+    overflow-x: auto;
+  }
+}
+@media (min-width: 1500px) and (max-width: 1600px){
+  .container{
+    min-width: 1250px;
+    overflow-x: auto;
   }
 }
 
@@ -316,6 +415,12 @@ a{
   }
   .container{
     display: none;
+  }
+  .locationON, .locationOFF{
+    right: 0px;
+    left: 400px;
+    top:65px;
+    min-width: 250px;
   }
 }
 
@@ -341,7 +446,7 @@ a{
       display: none;
     }
     .underHeaderON{
-      top:110px;
+      top:100px;
     }
     .Row2{
       left:50px;
@@ -349,29 +454,31 @@ a{
     .Row3{
       left: 50px;
     }
-    .locationON{
+    .locationON, .locationOFF{
       right: 0px;
-      left: 0px;
+      left: 100px;
+      top:69px;
+      min-width: 250px;
     }
 }
 
-@media (max-width: 481px){
+@media (max-width: 500px){
   .logo{
     margin-left: 0px;
     position: relative;
-    
   }
   .header{
     height: 120px;
     }
   .btn {
       top: 40px;
-      display: inline-flex
+      display: inline-flex;
+      font-size: 17px;
     }
     .btn1_position{
       position: relative;
-      top: 25px;
-      left: 20px;
+      top: 35px;
+      left: 80px;
       display: inline-flex;
       gap: 20px;
     }
@@ -387,15 +494,80 @@ a{
     .Row3{
       left: 50px;
     }
-    .locationON{
+    .locationON, .locationOFF{
       right: 0px;
-      left: 0px;
+      left: 20px;
+      top:70px;
     }
 }
 
 @media (max-width: 389px){
   .logo{
+    bottom: 0px;
+    left: -20px;
+  }
+  .btn1_position{
+    left: 30px;
+    gap: 10px;
+  }
+}
+
+@media (max-width: 359px){
+  .logo{
     bottom: 20px;
     left: -20px;
+  }
+  .btn{
+    width: 70px;
+    font-size: 16px;
+  }
+}
+@media (max-width: 336px){
+  .header{
+    max-width: 100%;
+  }
+  .btn1_position{
+   left: 10px;
+  }
+}
+
+
+@media (max-width: 320px){
+  .btn1_position{
+    gap:0px;
+    width: fit-content;
+  }
+  .header{
+    min-width: 320px;
+  }
+  .accountIcon{
+    position:relative;
+    top: -83px;
+    left: 280px;
+  }
+  .title{
+    left: 35px;
+  }
+  .locationON{
+    right: 0px;
+    left: 0px;
+    top:120px;
+  }
+}
+
+
+@media (min-width: 100px) and (max-width:412px){
+   .locationInputPadd{
+    padding-left: 20px;
+    text-indent: 20px;
+   }
+   .loop{
+    left: 10px;
+    top: -30px;
+   }
+   .locationON{
+    right: 0px;
+    left: 0px;
+    top:120px;
   }
 }

@@ -1,0 +1,917 @@
+/*till 320px*/
+@media only screen and (max-width: 320px){
+    /*Body & Sizes -->*/
+    .mainBody{
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+    .modelBody{
+        flex: 1;
+        min-width: 320px;
+        min-height: 800px;
+        max-width: 760px;
+    }
+    .modelStartDiv{
+        min-width: 320px;
+        max-width: 760px;
+        max-height: 600px;
+        padding: 60px 0px 60px 0px;
+        text-align: center;
+    }
+    .modelImageLogoDiv{
+        min-width: 180px;
+        padding-left: 60px;
+        padding-right: 60px;
+        min-height: 70px;
+        margin-top: 30px;
+    }
+    .modelImageCarDiv{
+        min-width: 100%;
+        min-height: 20%;
+        max-width: 760px;
+        max-height: 400px;
+    }
+    .modelMiddleDiv{               
+        min-width: 320px;
+        max-width: 760px;
+        max-height: 800px;
+        padding: 60px 0px 60px 0px;
+        text-align: center;
+    }
+    
+    .modelMiddle_SecondDiv{               
+        min-width: 290px;
+        max-width: 760px;
+        max-height: 2300px;
+        padding: 60px 15px 60px 15px;
+        text-align: center;
+    }
+    .model_Second_ImageCarDiv{
+        min-width: 100%;
+        min-height: 20%;
+        max-width: 760px;
+        max-height: 1400px;
+    }
+    .modelMiddle_ThirdDiv{        
+        min-width: 320px;
+        max-width: 760px;
+        max-height: 1000px;
+        padding: 60px 0px 60px 0px;
+        text-align: start;
+    }
+    .modelCard{
+        border-radius: 30px;
+        min-height: 250px;
+        max-width: 600px;
+    }
+    /*Content -->*/
+    .modelImageLogo{        /*First Div -->*/
+        width: 100%;
+        height: 100%;
+        background-color: white;
+    }
+    .modelImageCar{
+        width: 100%;
+        height: 100%;
+        background-color: white;
+    }
+    h1, p{
+        margin: 0px;
+        min-width: 10px;
+    }
+    .modelStart_p{
+        margin-top: 10px;
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+    .modelStart_h1{
+        font-size: 30px;
+        margin-top: 20px;
+    }
+    .modelStart_p_consumption{
+      padding-left: 20px;
+      padding-right: 20px;
+      font-size: 15px;
+      font-weight: 400;
+    }
+    
+    .modelNumber_p{             /*Second Div -->*/    
+        font-weight: 400;
+        font-size: 40px;
+    }
+    .modelSmall_Letter{
+        font-size: 20px;
+    }
+    .modelDescription_p{
+        font-size: 19px; 
+        font-weight: 400;
+        padding-bottom: 20px;
+    }
+    .modelImageCarDiv_padding{
+      padding: 58px;
+    }
+    .modelImageCarRadius{
+        border-radius: 30px;
+    }
+    .modelCarouselDivStyle{
+        padding: 10px;
+        margin: 10px;
+        border-radius: 30px;
+        background-color: grey;
+        min-height: 100%;
+        max-width: 650px;
+    }
+    .modelDescription_p14px{
+        font-size: 14px; 
+        font-weight: 300;
+        padding-bottom: 20px;
+    }
+    .modelDescription_p500w{
+        font-size: 14px; 
+        font-weight: 500;
+    }
+    #modelMarginRigh33px{
+        margin-left: -5px;
+    }
+    .modelMarginBotOff{
+        margin-bottom: 0px;
+    }
+    .modelThird_DescriptionDiv{
+        text-align: start;
+        min-width: 280px;
+        max-width: 700px;
+        padding: 40px;
+        padding-bottom: 10px;
+    }
+    .modelMiddle_ThirdDiv2{
+        display: none;
+    }
+    .modelMiddle_ThirdDiv3{
+        display: none;
+        }
+    /*Footer -->*/
+    .highlightText{
+        padding: 0%;
+    }
+    .modelButton{
+        min-width: 250px;
+    }
+    .model_4thDiv{
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    .modelCard{
+        background-color: #DADBDD;
+    }
+    .modelCard2{
+        padding-left: 5px;
+    }
+    #modelMarginRigh33px{
+        margin: 0px;
+        margin-left: 25px;
+    }
+    .modelCardImageCar{
+        border-radius: 30px 30px 0px 0px;
+    }
+    .control-arrow::before{
+        border: 9px solid black;
+    }
+}
+
+
+/* till 760px */
+@media only screen and (min-width: 320px){
+/*Body & Sizes -->*/
+.mainBody{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.modelBody{
+    flex: 1;
+    min-width: 320px;
+    min-height: 800px;
+    max-width: 760px;
+}
+.modelStartDiv{
+    min-width: 320px;
+    max-width: 760px;
+    max-height: 600px;
+    padding: 60px 0px 60px 0px;
+    text-align: center;
+}
+.modelImageLogoDiv{
+    min-width: 180px;
+    padding-left: 60px;
+    padding-right: 60px;
+    min-height: 70px;
+    margin-top: 30px;
+}
+.modelImageCarDiv{
+    min-width: 100%;
+    min-height: 20%;
+    max-width: 760px;
+    max-height: 400px;
+}
+.modelMiddleDiv{               
+    min-width: 320px;
+    max-width: 760px;
+    max-height: 800px;
+    padding: 60px 0px 60px 0px;
+    text-align: center;
+}
+
+.modelMiddle_SecondDiv{               
+    min-width: 290px;
+    max-width: 760px;
+    max-height: 2300px;
+    padding: 60px 15px 60px 15px;
+    text-align: center;
+}
+.model_Second_ImageCarDiv{
+    min-width: 100%;
+    min-height: 20%;
+    max-width: 760px;
+    max-height: 1400px;
+}
+.modelMiddle_ThirdDiv{        
+    min-width: 320px;
+    max-width: 760px;
+    max-height: 1000px;
+    padding: 60px 0px 60px 0px;
+    text-align: start;
+}
+/*Content -->*/
+.modelImageLogo{        /*First Div -->*/
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+.modelImageCar{
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+h1, p{
+    margin: 0px;
+    min-width: 10px;
+}
+.modelStart_p{
+    margin-top: 10px;
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+.modelStart_h1{
+    font-size: 30px;
+    margin-top: 20px;
+}
+.modelStart_p_consumption{
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.modelNumber_p{             /*Second Div -->*/    
+    font-weight: 400;
+    font-size: 40px;
+}
+.modelSmall_Letter{
+    font-size: 20px;
+}
+.modelDescription_p{
+    font-size: 19px; 
+    font-weight: 400;
+    padding-bottom: 20px;
+}
+.modelImageCarDiv_padding{
+  padding: 58px;
+}
+.modelImageCarRadius{
+    border-radius: 30px;
+}
+.modelCarouselDivStyle{
+    padding: 10px;
+    margin: 10px;
+    border-radius: 30px;
+    background-color: #DADBDD;
+    min-height: 100%;
+    max-width: 650px;
+}
+.modelDescription_p14px{
+    font-size: 14px; 
+    font-weight: 300;
+    padding-bottom: 20px;
+}
+.modelDescription_p500w{
+    font-size: 14px; 
+    font-weight: 500;
+}
+.modelMarginBotOff{
+    margin-bottom: 0px;
+}
+#modelMarginRigh33px{
+    margin-left: 33px;
+}
+.modelThird_DescriptionDiv{
+    text-align: start;
+    min-width: 280px;
+    max-width: 700px;
+    padding: 40px;
+    padding-bottom: 10px;
+}
+.modelMiddle_ThirdDiv2{
+    display: none;
+}
+.modelMiddle_ThirdDiv3{
+    display: none;
+    }
+.model_4thDiv{        
+        min-width: 280px;
+        max-width: 760px;
+        max-height: 1000px;
+        padding: 80px 20px 80px 20px;
+    }
+.modelCard{
+        border-radius: 30px;
+        background-color: #DADBDD;
+        min-height: 250px;
+        max-width: 700px;
+    }
+.modelCardImageCar{
+        border-radius: 30px 30px 0px 0px;
+}
+.control-arrow::before{
+    border: 9px solid black;
+}
+/*Footer -->*/
+.highlightText{
+    padding: 0%;
+}
+}
+
+/*/////////////////////////////////////////////////////////////////////////*/
+@media only screen and (min-width: 650px) and (max-width: 760px){
+    .modelCarouselDivStyle{
+        margin-left: 40px;
+    }
+}
+
+/*till 1300px*/
+@media only screen and (min-width: 760px){
+    /*Body & Sizes -->*/
+    .modelBody{
+        min-width: 760px;
+        max-width: 1300px;
+    }
+    .modelStartDiv{
+        min-width: 760px;
+        max-width: 1300px;
+        min-height: 830px;
+        padding: 100px 0px 100px 0px;
+        text-align: center;
+    }
+    .modelImageLogoDiv{
+        min-width: 520px;
+        padding-left: 120px;
+        padding-right: 120px;
+        margin-top: 40px;
+    }
+    .modelImageCarDiv{
+        min-width: 100%;
+        min-height: 20%;
+        max-width: 1300px;
+        max-height: 400px;
+    }
+    .modelMiddleDiv{               
+        min-width: 760px;
+        max-width: 1300px;
+        max-height: 1200px;
+        padding: 60px 0px 60px 0px;
+        display: inline-flex;
+    }
+    .modelDescriptionDiv{
+        min-width: 120px;
+        max-width: 350px;
+        padding-left: 40px;
+    }
+    .modelMiddle_SecondDiv{               
+        min-width:  700px;  /* - 30 * 2  */
+        max-width: 1300px;
+        max-height: 4600px;
+        padding: 120px 30px 120px 30px;
+        display: inline-flex;
+        gap: 30px;
+    }
+    .modelMiddle_ThirdDiv{        
+        min-width: 760px;
+        max-width: 1300px;
+        max-height: 1000px;
+        padding: 60px 0px 60px 0px;
+        text-align: start;
+    }
+    .model_Second_ImageCarDiv{
+        min-width: 100px;
+        min-height: 20%;
+        max-width: 760px;
+        max-height: 1400px;
+    }
+    .modelCarouselDivStyle{
+        padding: 10px;
+        margin: 10px;
+        border-radius: 30px;
+        background-color: #DADBDD;
+        min-height: 950px;
+        max-width: 450px;
+    }
+    .modelMiddle_ThirdDiv{        
+        min-width: 760px;
+        max-width: 1300px;
+        max-height: 1000px;
+        padding: 60px 0px 60px 0px;
+        text-align: start;
+    }
+    /*Content -->*/
+   .modelImageLogo{        /*First Div -->*/
+    width: 100%;
+    min-height: 80%;
+    max-height: 100%;
+    background-color: white;
+    }
+    .modelImageCar{
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    }
+    h1, p{
+    margin: 0px;
+    min-width: 20px;
+    }
+   .modelStart_p{
+    margin-top: 20px;
+    font-size: 20px;
+    margin-bottom: 30px;
+    }
+    .modelStart_h1{
+    font-size: 56px;
+    margin-top: 40px;
+    }
+   .modelStart_p_consumption{
+    padding-left: 40px;
+    padding-right: 40px;
+    font-size: 18px;
+    font-weight: 500;
+    }
+   .modelNumber_p{             /*Second Div -->*/    
+    font-weight: 400;
+    font-size: 60px;
+    }   
+   .modelSmall_Letter{
+    font-size: 30px;
+    }
+   .modelDescription_p{
+    font-size: 20px; 
+    font-weight: 400;
+    padding-bottom: 20px;
+   }
+   .modelImageCarDiv_padding{
+    padding: 0px;
+    min-width: 400px;
+    min-height: 100px;
+   }
+   .modelImageCar{
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+
+
+  .modelInlineDiv{             /* Carousel*/
+    display: inline-flex;
+  }
+  li{
+    display: flex;
+  }
+  .modelInlineDiv_Padding{
+    padding-left: 30px;
+  }
+  .modelInlineDiv_Padding2{
+   padding-left: 30px;
+  }
+  .modelMiddle_ThirdDiv1{
+    display: none;
+   }
+   .modelMiddle_ThirdDiv2{
+    display: contents;
+   }
+   .modelMiddle_ThirdDiv3{
+    display: none;
+    }
+
+
+.modelCard{                     /*4th Div*/
+        border-radius: 30px;
+        background-color: #DADBDD;
+        min-height: 250px;
+        max-height: 900px;
+        max-width: 1300px;
+        margin-left: 15px;
+        margin-right: 15px;
+        display: inline-flex;
+    }
+.modelCard2{                    
+        border-radius: 30px;
+        background-color: #DADBDD;
+        min-height: 250px;
+        max-width: 600px;
+        padding-top: 80px;
+        padding-left: 30px;
+    }
+.modelCardImageCar{
+    border-radius: 30px 0px 0px 30px;
+    max-width: 500px;
+    min-width: 400px;
+    height: 400px;
+}
+.model_4thDiv{        
+        min-width: 760px;
+        max-width: 1300px;
+        max-height: 1000px;
+        padding: 60px 0px 60px 0px;
+    }
+
+#modelMarginRigh33px{
+  margin: 0px;
+}
+}
+
+
+/*/////////////////////////////////////////////////////////////////////////*/
+@media only screen and (min-width: 1050px){
+    .modelImageCarDiv_padding{
+        padding-left: 100px;
+        min-width: 10px;
+        min-height: 100px;   
+       }
+       .modelInlineDiv{             /* Carousel*/
+        display: inline-flex;
+    }
+    .modelDescriptionDiv{
+        padding-left: 100px;
+    }
+    .modelCarouselDivStyle{
+        max-width: 350px;
+    }
+    li{
+        display: flex;
+    }
+    .modelInlineDiv_Padding{
+        padding-left: 40px;
+    }
+    .modelInlineDiv_Padding2{
+       padding-left: 50px;
+    }
+      .modelMiddle_ThirdDiv1{
+        display: none;
+       }
+       .modelMiddle_ThirdDiv2{
+        display: none;
+       }
+       .modelMiddle_ThirdDiv3{
+       display: contents;
+       }
+}
+
+/*till 1760px*/
+@media only screen and (min-width: 1300px){
+     /*Body & Sizes -->*/
+     .modelBody{
+        min-width: 1300px;
+        max-width: 1760px;
+    }
+    .modelStartDiv{
+        min-width: 1300px;
+        max-width: 1760px;
+        min-height: 720px;
+        padding: 0px 0px 150px 0px;
+        text-align: center;
+    }
+    .modelImageLogoDiv{
+        min-width: 760px;
+        max-width: 1000px;
+        margin-top: 0px;
+        padding: 0px;
+    }
+    .modelImageCarDiv{
+        min-width: 1200px;
+        min-height: 30%;
+        max-width: 1200px;
+        max-height: 600px;
+        align-self: center;
+    }
+    .modelStartDivContent{
+        display: flex;
+        justify-content: center;
+    }
+    .modelMiddleDiv{               
+        min-width: 100%;
+        max-width: 1760px;
+        max-height: 1200px;
+        padding: 60px 0px 60px 0px;
+        display: inline-flex;
+    }
+    .modelDescriptionDiv{
+        min-width: 120px;
+        max-width: 350px;
+        padding-left: 160px;
+    }
+    .modelImageCarDiv_padding{
+        min-width: 400px;
+        min-height: 100px;
+       }
+    .modelMiddle_SecondDiv{               
+        min-width: 100%;
+        max-width: 1760px;
+        max-height: 4600px;
+        padding: 120px 0px 120px 0px;
+        gap:0px
+    }
+    .model_Second_ImageCarDiv{
+        min-width: 100px;
+        min-height: 20%;
+        max-width: 760px;
+        max-height: 1400px;
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+    .modelCarouselDivStyle{
+        min-height: 990px;
+        max-width: 550px;
+    }
+    .modelMiddle_ThirdDiv{        
+        min-width: 1300px;
+        max-width: 1760px;
+        max-height: 960px;
+        padding: 60px 0px 60px 0px;
+        text-align: start;
+    }
+
+    .modelImageLogo{        /*First Div -->*/
+        width: 100%;
+        min-height: 80%;
+        max-height: 100%;
+        background-color: white;
+        }
+        .modelImageCar{
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        }
+        h1, p{
+        margin: 0px;
+        min-width: 20px;
+        }
+       .modelStart_p{
+        margin-top: 20px;
+        font-size: 27px;
+        margin-bottom: 30px;
+        }
+        .modelStart_h1{
+        font-size: 56px;
+        margin-top: 40px;
+        }
+       .modelStart_p_consumption{
+        padding-left: 40px;
+        padding-right: 40px;
+        font-size: 18px;
+        font-weight: 500;
+        }
+       .modelNumber_p{             /*Second Div -->*/    
+        font-weight: 400;
+        font-size: 60px;
+        }   
+       .modelSmall_Letter{
+        font-size: 30px;
+        }
+       .modelDescription_p{
+        font-size: 20px; 
+        font-weight: 400;
+        padding-bottom: 20px;
+       }
+       .modelImageCarDiv_padding{
+        padding: 0px;
+        padding-left: 50px;
+        min-width: 400px;
+        min-height: 100px;
+       }
+       .modelImageCar{
+        width: 100%;
+        height: 100%;
+        background-color: white;
+    }
+    
+    
+      .modelInlineDiv{             /* Carousel*/
+        display: inline-flex;
+      }
+      li{
+        display: flex;
+      }
+      .modelInlineDiv_Padding{
+        padding-left: 30px;
+      }
+      .modelInlineDiv_Padding2{
+       padding-left: 30px;
+      }
+      .modelMiddle_ThirdDiv1{
+        display: none;
+       }
+       .modelMiddle_ThirdDiv2{
+        display: none;
+       }
+       .modelMiddle_ThirdDiv3{
+        display: contents;
+        }
+    
+    
+
+    .modelCard{                     /*4th Div*/
+            border-radius: 30px;
+            background-color: #DADBDD;
+            min-height: 250px;
+            max-height: 900px;
+            max-width: 1760px;
+            margin-left: 15px;
+            margin-right: 15px;
+            display: inline-flex;
+        }
+    .modelCard2{                    
+            border-radius: 30px;
+            background-color: #DADBDD;
+            min-height: 250px;
+            max-width: 600px;
+            padding-top: 80px;
+            padding-left: 30px;
+        }
+    .modelCardImageCar{
+        border-radius: 30px 0px 0px 30px;
+        max-width: 500px;
+        min-width: 400px;
+        height: 400px;
+    }
+    .model_4thDiv{        
+            min-width: 1300px;
+            max-width: 1760px;
+            max-height: 1000px;
+            padding: 60px 0px 60px 0px;
+            display: flex;
+            justify-content: center;
+        }
+    .modelDown{
+        margin-top: 170px;
+    }
+    .modelUp{
+        margin-bottom: 170px;
+    }
+    
+    #modelMarginRigh33px{
+      margin: 0px;
+    }
+}
+
+
+/*till 2600px*/
+@media only screen and (min-width: 1760px){
+    /*Body & Sizes -->*/
+    .modelBody{
+        min-width: 1760px;
+        max-width: 2600px;
+    }
+    .modelStartDiv{
+        min-width: 1760px;
+        max-width: 2600px;
+        min-height: 800px;
+        padding: 0px 0px 150px 0px;
+        text-align: center;
+    }
+    .modelStartDivContent{
+        display: flex;
+        justify-content: center;
+    }
+    .modelImageLogoDiv{
+        min-width: 760px;
+        max-width: 1000px;
+        margin-top: 0px;
+        padding: 0px;
+    }
+    .modelImageCarDiv{
+        min-width: 1200px;
+        min-height: 30%;
+        max-width: 1200px;
+        max-height: 600px;
+        align-self: center;
+    }
+    .modelMiddleDiv{               
+        min-width: 100%;
+        max-width: 1760px;
+        max-height: 1200px;
+        padding: 60px 0px 60px 0px;
+        display: inline-flex;
+        justify-content: center;
+    }
+    .modelMiddle_SecondDiv{               
+        min-width: 100%;
+        max-width: 2600px;
+        max-height: 4600px;
+        padding: 120px 0px 120px 0px;
+        gap:0px;
+        display: flex;
+        justify-content: center;
+    }
+    .modelDescriptionDiv{
+        min-width: 120px;
+        max-width: 350px;
+        padding-left: 0px;
+        padding-right: 100px;
+    }
+    .modelImageCarDiv2{
+        min-width: 100%;
+        max-height: 300px;
+        align-self: center;
+    }
+    .modelImageCarDiv_padding{
+        min-width: 400px;
+        min-height: 100px;
+       }
+    .modelCarouselDivStyle{
+        padding: 10px;
+        margin: 10px;
+        border-radius: 30px;
+        background-color: #DADBDD;
+        min-height: 750px;
+        max-width: 350px;
+    }
+    /*Contents*/
+    .modelStart_h1{
+        margin-top: 90px;
+    }
+    .modelInlineDiv{             /* Carousel*/
+        display: inline-flex;
+        justify-content: center;
+      }
+      li{
+        display: flex;
+      }
+      .modelInlineDiv_Padding{
+        padding-left: 30px;
+      }
+      .modelInlineDiv_Padding2{
+       padding-left: 30px;
+      }
+      .modelMiddle_ThirdDiv1{
+        display: none;
+       }
+       .modelMiddle_ThirdDiv2{
+        display: none;
+       }
+       .modelMiddle_ThirdDiv3{
+        display: contents;
+        }
+       .modelCard{                     /*4th Div*/
+            border-radius: 30px;
+            background-color: #DADBDD;
+            min-height: 550px;
+            max-width: 1360px;
+            margin-left: 15px;
+            margin-right: 15px;
+            display: inline-flex;
+        }
+    .modelCard2{                    
+            max-width: 1200px;
+        }
+    .modelCardImageCar{
+        border-radius: 30px 0px 0px 30px;
+        max-width: 2000px;
+        min-width: 650px;
+        height: 550px;
+    }
+    .model_4thDiv{        
+            min-width: 1760px;
+            max-width: 2600px;
+            max-height: 1000px;
+            padding: 60px 0px 60px 0px;
+            display: flex;
+            justify-content: center;
+        }
+        .control-next{
+            background-color: blue;
+            color: aquamarine;
+        }
+    .modelMarginTop{
+        margin-top: 100px;
+    }
+    .control-arrow::before{
+        border: 9px solid black;
+    }
+}

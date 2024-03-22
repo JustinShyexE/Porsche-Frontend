@@ -2,7 +2,7 @@
 .loginBody{
     -ms-overflow-style: none;
     display: grid;
-    grid-template-columns:1704px 856px;
+    grid-template-columns: minmax(600px 1704px) minmax(400px 856px);
     grid-template-rows: 1266px 47px;
   }
 .loginImage{
@@ -92,6 +92,8 @@
     border: 3px solid grey;
     outline: none;
 }
+
+
 .loginInput[type=text]:focus {
     border: 3px solid #000;
   }
@@ -174,7 +176,7 @@
     .loginBody{
       -ms-overflow-style: none;
       display: grid;
-      grid-template-columns:1704px 856px;
+      grid-template-columns: minmax(600px, 1704px) minmax(600px, 856px);
       grid-template-rows: 1266px 47px;
     }
     .loginDiv{
@@ -206,6 +208,7 @@
       justify-content: center;
       align-items: center;
       padding-left: 60px;
+      background-color: white;
   }
   
   .loginText{
@@ -329,7 +332,6 @@
       text-decoration: underline;
       color: #000;
   }
-  
   }
 @media (max-width: 1920px) and (max-height:1080px){
     .loginBody{
@@ -399,7 +401,7 @@
 /*Ipad Pro*/
 @media (max-width: 1024px) and (max-height:1366px){
     .loginBody{
-        grid-template-columns:250px 774px;
+        grid-template-columns: 250px 774px;
         grid-template-rows: 300px 1019px 47px;
         gap:0px;
       }

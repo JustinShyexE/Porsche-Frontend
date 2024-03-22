@@ -27,7 +27,6 @@ function Button2(props){
     function SetClickON(){
       setClick(true)
     }
-  
     function SetClickOFF(){
       setClick(false)
     }
