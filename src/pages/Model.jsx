@@ -48,7 +48,7 @@ function Model(){
            
         </div>
         <div className="modelMiddle_ThirdDiv modelMiddle_ThirdDiv1">
-             <Carousel centerMode={false} centerSlidePercentage={0} showStatus={false}  stopOnHover="true" swipeable={true} showThumbs={false} >             
+             <Carousel centerMode={false} centerSlidePercentage={0} showStatus={false}  stopOnHover="true" swipeable={true} showThumbs={false} swipeScrollTolerance={2} emulateTouch={true}>             
                  <div>
                    <CarouselDiv />
                   </div>
@@ -61,7 +61,7 @@ function Model(){
              </Carousel>
         </div>
         <div className="modelMiddle_ThirdDiv modelMiddle_ThirdDiv2">
-             <Carousel showArrows={true} centerSlidePercentage={0} showStatus={false}  stopOnHover="true" swipeable={true} showThumbs={false} >             
+             <Carousel showArrows={true} centerSlidePercentage={0} showStatus={false}  stopOnHover="true" swipeable={true} showThumbs={true} swipeScrollTolerance={2} emulateTouch={true}>             
                   <div className="modelInlineDiv modelInlineDiv_Padding">
                    <CarouselDiv />
                    <CarouselDiv />
@@ -76,8 +76,8 @@ function Model(){
              <Carousel
             
             className="relative"
-             color-secondary centerSlidePercentage={0} showStatus={false}  swipeable={true} showThumbs={true} >             
-                  <div className="modelInlineDiv modelInlineDiv_Padding">
+             color-secondary centerSlidePercentage={0} showStatus={false}  swipeable={true} showThumbs={true} swipeScrollTolerance={2} emulateTouch={true}>             
+                  <div className="modelInlineDiv modelInlineDiv_Padding" >
                    <CarouselDiv />
                    <CarouselDiv />
                    <CarouselDiv />
@@ -101,8 +101,8 @@ function Model(){
             </div>
         </div>
         
-        <div className="modelMiddle_SecondDiv">
-          <div style={{padding:"20px"}}>
+        <div style={{paddingTop:"0px", maxHeight:"100px"}} className="modelMiddle_SecondDiv">
+          <div style={{padding:"20px", paddingTop:"20px"}}>
             <p className="roboto modelStart_p">Consumption and Emissions.</p>
             <p className="roboto modelDescription_p14px"><span className="modelDescription_p500w">Taycan Models (WLTP)*:</span> Electrical consumption combined (model range): 19.7 - 16.7 kWh/100 km, CO2 emissions combined* (model range): 0 g/km, <span className="modelDescription_p500w">Taycan 4S Models (WLTP)*:</span> Electrical consumption combined (model range): 20.9 - 17.7 kWh/100 km, CO2 emissions combined* (model range): 0 g/km, <span className="modelDescription_p500w">Taycan Turbo Models (WLTP)*:</span> Electrical consumption combined (model range): 20.5 - 18.0 kWh/100 km, CO2 emissions combined* (model range): 0 g/km, <span className="modelDescription_p500w">Taycan Turbo S Models (WLTP)*:</span> Electrical consumption combined (model range): 20.5 - 17.9 kWh/100 km, CO2 emissions combined* (model range): 0 g/km, <span className="modelDescription_p500w">Taycan Turbo GT with Weissach Package Models (WLTP)*:</span> Electrical consumption combined (model range): 21.3 - 20.6 kWh/100 km, CO2 emissions combined* (model range): 0 g/km, <span className="modelDescription_p500w">Taycan Turbo GT Models (WLTP)*:</span> Electrical consumption combined (model range): 21.6 - 20.7 kWh/100 km, CO2 emissions combined* (model range): 0 g/km</p>
           </div>

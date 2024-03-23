@@ -1,0 +1,99 @@
+.customMainBody{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.customBody{
+   flex:1;
+   background-color: #DADBDD;
+   display: flex;
+}
+/*Carousel Divs*/
+.customCarouselDiv{
+    max-width: 1600px;
+    min-height: 900px;
+    padding-left: 50px;
+}
+/*Colors Divs*/
+
+.customColorsDiv{
+    min-width: 740px;
+    max-width: 800px;
+    max-height: 950px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: red;
+    margin-left: 60px;
+}
+.customAllColorsDiv{
+    padding: 10px;
+    max-width: 720px;
+    min-width: 450px;
+    min-height: 300px;
+    background-color: beige;
+ }
+.customColor{
+    background-color: aquamarine;
+    max-width: 360px;
+    padding-top: 5px;
+    display: inline-block;
+    gap:50px
+}
+.customDivColor{
+    max-width: 350px;
+    min-width: 300px;
+    max-height: 40px;
+    min-height: 40px;
+    background-color: red;
+    border-radius: 10px;
+    margin: 5px;
+}
+/**/
+.customDivColor:hover{
+    max-width: 346px;
+    min-width: 296px;
+    max-height: 36px;
+    min-height: 36px;
+    border: 2px solid grey;
+}
+
+
+
+/*Text and Stuff*/
+.customTitle{
+    padding-top: 70px;
+    padding-bottom: 30px;
+    padding-left: 200px;
+    font-size: 28px;
+    background-color: #DADBDD;
+}
+.customH1{
+    width: 100%;
+    height: 50px;
+    font-size: 35px;
+    padding: 20px;
+    padding-right: 0px;
+    background-color: blue;
+}
+.customColorName{
+    font-size: 16px;
+    font-weight: 400;
+    padding-left: 8px;
+}
+
+/*Carousel*/
+.customCarouselImg{
+    border-radius: 10px;
+}
+.selected{
+    border-radius: 10px;
+}
+.thumb{
+    border-radius: 20px;
+    border-color: blue;
+}
+
+
+/*Colors*/
+
+

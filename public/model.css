@@ -178,8 +178,6 @@
         border: 9px solid black;
     }
 }
-
-
 /* till 760px */
 @media only screen and (min-width: 320px){
 /*Body & Sizes -->*/
@@ -448,14 +446,14 @@ h1, p{
     margin: 0px;
     min-width: 20px;
     }
+    .modelStart_h1{
+        font-size: 56px;
+        margin-top: 40px;
+        }
    .modelStart_p{
     margin-top: 20px;
     font-size: 20px;
     margin-bottom: 30px;
-    }
-    .modelStart_h1{
-    font-size: 56px;
-    margin-top: 40px;
     }
    .modelStart_p_consumption{
     padding-left: 40px;
@@ -674,7 +672,7 @@ h1, p{
         }
        .modelStart_p{
         margin-top: 20px;
-        font-size: 27px;
+        font-size: 20px;
         margin-bottom: 30px;
         }
         .modelStart_h1{

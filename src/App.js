@@ -6,6 +6,7 @@ import Login from "./pages/Login";
 import Login2 from "./pages/Login2"
 import SignUp from "./pages/SignUp";
 import Model from "./pages/Model";
+import Custom from "./pages/Custom"
 
 export default function App(){
     return (
@@ -18,6 +19,7 @@ export default function App(){
                 <Route path="/login-password" element={<Login2 />} />
                 <Route path="/signup" element={<SignUp />} />
                 <Route path="/model" element={<Model />} />
+                <Route path="/custom" element={<Custom />} />
             </Routes>
             </BrowserRouter>
         </div>
