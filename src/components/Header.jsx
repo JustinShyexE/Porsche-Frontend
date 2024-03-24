@@ -15,23 +15,23 @@ function Header(props){
    function handleExpand1(){
       setExpand(true)
       setButton([1])
-   }
+         }
    function handleExpand2(){
       setExpand(true)
       setButton([2])
-   }
+         }
    
    function handleExpand3(){
       setExpand(true)
       setButton([3])
-   }
+         }
 
 
    function ExpandOff(){
       setExpand(false)
-   }
-
-  
+         }
+    
+   
 
    return(<div>
    <div className="header">
@@ -78,8 +78,5 @@ function Header(props){
    </div>)
 }
 
-// className="accountIcon"
-
-//{click===true?<div onMouseOut={SetClickOFF} className="locationON"></div>:<div className="locationOFF"></div>}
 
 export default Header;

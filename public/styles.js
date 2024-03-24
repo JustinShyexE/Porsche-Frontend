@@ -4,4 +4,3 @@ function showIt() {
   }
   setTimeout("showIt()", 3000); // after 5 secs
 
-

@@ -785,6 +785,7 @@ h1, p{
     .modelBody{
         min-width: 1760px;
         max-width: 2600px;
+        background-color: green;
     }
     .modelStartDiv{
         min-width: 1760px;
