@@ -1,0 +1,190 @@
+@media only screen and (min-width:0px){    
+    .homeBody{
+        flex:1;
+    }
+    .homePlayer{
+        min-width: 320px;
+        min-height: 200px;                  
+        display: flex;
+        justify-content: center;
+    }
+    .homeDiv1{
+        min-width: 320px;
+        min-height: 50px;
+        padding-top: 50px;
+    }
+    .homeDiv1h2{
+        padding-bottom: 35px;
+    }
+    .homeDivCentering{
+        display: flex;
+        justify-content: center;
+        align-content: center;
+    }
+    .homeDiv1Content{
+       display: block;
+    }
+    .homeContentCards{
+        min-width: 240px;
+        min-height: 490px;
+        padding:20px;
+        margin:20px;
+        border-radius: 15px;
+    }
+    .homeCardTitle{
+        color: white;
+        font-weight: 400;
+        font-size: 20px;
+        padding-bottom: 10px;
+    }
+    .homeCardPrice{
+        color: white;
+        font-weight: 400;
+        font-size: 16px;
+    }
+    .homeButton{
+        background-color: transparent;
+        border: 2px solid white;
+        color: white;
+    }
+    .homeCenterEnd{
+           display: flex;
+           justify-content: center;
+           align-items: end;
+    }
+    .homePlayerButton{ 
+        min-width: 320px;
+        min-height: 15%;
+        position: absolute;
+        display: flex;
+        justify-content: start;
+        align-items: end;
+        }
+    .homePositionButton{
+            width: 320px;
+            height: 300px;
+            display: flex;
+            justify-content: end;
+            align-items: start;
+        }
+}
+
+@media only screen and (min-width:320px){    
+    .homePlayerButton{ 
+        min-width: 100%;
+        min-height: 24.7%; 
+    } 
+    .homePositionButton{
+        width: 90px;
+        height: 90px;
+    }
+    .homePositionButton{
+        width: 80px;
+        height: 170px;
+    }
+}
+
+@media only screen and (min-width:480px){    
+    .homeContentCards{
+        max-width: 500px;
+        min-height: 700px;
+    }
+    .homeDiv1h2{
+       font-weight: 500;
+       font-size: 27px;
+}
+    .homePlayerButton{ 
+        min-height: 33%; 
+    }
+    .homePositionButton{
+        width: 100px;
+        height: 200px;
+    }
+}
+@media only screen and (min-width:600px){  
+.homePlayerButton{ 
+        min-width: 100%;
+        min-height: 39%; 
+    } 
+    .homePositionButton{
+        width: 100px;
+        height: 200px;
+    }
+}
+
+@media only screen and (min-width:750px){   
+    .homeContentCards{
+        min-width: 700px;
+    }
+    .homeDiv1h2{
+        font-size: 30px;
+    }
+    .homePlayerButton{ 
+        min-height: 52%; 
+    } 
+    .homePositionButton{
+        width: 100px;
+        height: 250px;
+    }
+}
+@media only screen and (min-width:1000px){   
+    .homeContentCards{
+        min-height: 850px;
+    }
+    .homeDiv1h2{
+        font-size: 34px;
+    }
+    .homePlayerButton{ 
+        min-height: 68%; 
+    }
+    .homePositionButton{
+        height: 300px;
+    }
+}
+@media only screen and (min-width:1300px){   
+    .homeDiv1Content{
+       display: inline-flex;
+       flex-shrink: 0;
+       flex-flow: row wrap;
+       justify-content: center;
+       align-items: center;
+       max-width: 1300px;
+     }
+     .homeContentCards{
+        min-height: 700px;
+        min-width: 500px;
+     }
+     .homeDiv1h2{
+        font-size: 38px;
+    }
+    .homePlayerButton{ 
+        min-height: 84%; 
+    } 
+    .homePositionButton{
+        height: 300px;
+    }
+}
+@media only screen and (min-width:1610px){ 
+    .homePlayerButton{ 
+        min-height: 97%; 
+    } 
+    .homePositionButton{
+        height: 230px;
+    }
+    .homePositionButton{
+        height: 250px;
+    }
+}
+
+@media only screen and (min-width:1920px){ 
+.homeDiv1Content{
+    max-width: 1920px;
+}
+.homePlayerButton{ 
+    min-height: 100%; 
+} 
+.homePositionButton{
+    width: 200px;
+    height: 250px;
+}
+}

@@ -27,12 +27,13 @@ function Button2(props){
     function SetClickON(){
       setClick(true)
     }
+
     function SetClickOFF(){
       setClick(false)
     }
   
     return (<div>
-      <div onMouseLeave={SetClickOFF}  onMouseOut={find} onMouseOver={SetClickON} className="underButtonA_div"><a href="/" id="delayVisible" className={click? "underButtonB" : "underButtonA"} >{props.text}</a></div>
+      <div onMouseLeave={SetClickOFF}  onMouseOut={find} onMouseOver={SetClickON} className="underButtonA_div"><a href="/" className={click? "underButtonB" : "underButtonA"} >{props.text}</a></div>
       {click?<div className="container" onMouseEnter={SetClickON} onMouseLeave={SetClickOFF}>
        {find().map(foundedCars)}
       </div>

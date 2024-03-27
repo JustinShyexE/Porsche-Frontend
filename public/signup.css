@@ -56,6 +56,7 @@
 }
 .signupFooter{
   background-color: black;
+  min-width: 320px;
 }
 .signupP2{
    font-size: 15px;

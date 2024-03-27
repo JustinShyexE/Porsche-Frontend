@@ -118,7 +118,7 @@
         padding: 10px;
         margin: 10px;
         border-radius: 30px;
-        background-color: grey;
+        background-color: #DADBDD;
         min-height: 100%;
         max-width: 650px;
     }
@@ -166,6 +166,14 @@
     }
     .modelCard2{
         padding-left: 5px;
+    }
+    .modelCardButton{
+        min-width:280px;
+        min-height: 50px;
+        padding-bottom: 30px;
+        margin-left: -10px;
+        display: flex;
+        justify-content: center;
     }
     #modelMarginRigh33px{
         margin: 0px;
@@ -337,6 +345,9 @@ h1, p{
         min-height: 250px;
         max-width: 700px;
     }
+    .modelCard2{
+        padding-left: 10px;
+    }
 .modelCardImageCar{
         border-radius: 30px 30px 0px 0px;
 }
@@ -346,6 +357,14 @@ h1, p{
 /*Footer -->*/
 .highlightText{
     padding: 0%;
+}
+.modelCardButton{
+    min-width:280px;
+    min-height: 50px;
+    padding-bottom: 30px;
+    margin-left: -10px;
+    display: flex;
+    justify-content: center;
 }
 }
 
@@ -518,6 +537,9 @@ h1, p{
         margin-right: 15px;
         display: inline-flex;
     }
+.visibilitySetB{
+         display: none;
+    }
 .modelCard2{                    
         border-radius: 30px;
         background-color: #DADBDD;
@@ -526,6 +548,14 @@ h1, p{
         padding-top: 80px;
         padding-left: 30px;
     }
+.modelCardButton{
+        width:fit-content;
+        height: fit-content;
+        padding-bottom: 30px;
+        margin-left: -10px;
+        display: flex;
+        justify-content: center;
+}
 .modelCardImageCar{
     border-radius: 30px 0px 0px 30px;
     max-width: 500px;
@@ -785,7 +815,6 @@ h1, p{
     .modelBody{
         min-width: 1760px;
         max-width: 2600px;
-        background-color: green;
     }
     .modelStartDiv{
         min-width: 1760px;

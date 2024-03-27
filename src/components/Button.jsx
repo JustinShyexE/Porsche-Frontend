@@ -5,7 +5,7 @@ function Button(props){
 
 
    return (<div className="btndiv">
-      <a className="btn" href="/">{props.text}</a>
+      <a id={props.id} className="btn" href="/">{props.text}</a>
    </div>)
 }
 

@@ -7,6 +7,8 @@ import Login2 from "./pages/Login2"
 import SignUp from "./pages/SignUp";
 import Model from "./pages/Model";
 import Custom from "./pages/Custom"
+import Profile from "./pages/Profile";
+import ProfileCar from "./pages/ProfileCar";
 
 export default function App(){
     return (
@@ -20,6 +22,8 @@ export default function App(){
                 <Route path="/signup" element={<SignUp />} />
                 <Route path="/model" element={<Model />} />
                 <Route path="/custom" element={<Custom />} />
+                <Route path="/profile" element={<Profile />} />
+                <Route path="/my-vehicle" element={<ProfileCar />} />
             </Routes>
             </BrowserRouter>
         </div>

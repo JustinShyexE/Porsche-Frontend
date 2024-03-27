@@ -1,0 +1,335 @@
+
+@media only screen and (max-width: 320px){
+    .profileBody{
+        flex: 1;
+        max-width: 320px;
+        display: flex;
+        justify-content: center;
+    }
+    .profileDiv{
+        max-width: 320px;
+        min-height: 200px;
+        max-height: 800px;
+        padding: 0px;
+        padding-top: 50px;
+    }
+    .profileWelcome{
+        font-weight: 350;
+        font-size: 19px;
+    }
+    .profileSecondDiv{
+        min-width: 300px;
+        min-height: 300px;
+        padding-top: 0px;
+    }
+    #profileAnchorStyle{
+        color: black;
+        font-size: 22px;
+        font-weight: 600;
+        width: fit-content;
+    }
+    #profileAnchorStyle::after{
+        background-color: black;
+    }
+    .profileImageDiv{
+         margin-top: 60px;
+         min-width: 250px;
+         max-width: 480px;
+         min-height: 200px;
+    }
+    .profileImage{
+        width: 100%;
+        height: 100%;
+    }
+    .profileDescritpionDiv{
+        padding-top: 60px;
+        min-width: 250px;
+        min-height: 300px;
+        text-align: center;
+        display: flexbox;
+        justify-content: center;
+    }
+    .profileTitle{
+        font-size: 26px;
+        padding-bottom: 40px
+    }
+    .profileContent{
+        font-size: 20px;
+        padding-left: 50px;
+        padding-right: 50px;
+        font-weight: 300;
+    }
+    .profileVisibilityB{
+        display: none;
+    }
+
+    .myvehicleDescritpionDiv{
+        margin-top: 30px;
+        min-width: 300px;
+        min-height: 300px;
+    }
+    .myvehicleImageDiv{
+         padding: 10px;
+         min-width: 300px;
+         min-height: 200px;
+    }
+    .myvehicleImg{
+        width:  100%;
+        height: 100%;
+        border-radius: 20px;
+    }
+    .myvehicleContent{
+        min-width: 280px;
+        margin-left: 12px;
+        margin-right: 12px; 
+        padding: 10px;
+        border-radius: 20px;   
+        min-height: 120px;
+        max-height: 200px;
+    }
+    .myvehicleFlex{
+        display: flex;
+        justify-content: center;
+        gap:10px
+    }
+    .myvehicleCarDetails{
+        flex: 1 1 33.333%;
+        min-width: 80px;
+        min-height: 100px;
+        text-align: center;
+    }
+    .myvehicleCarDetails2{
+        min-width: 280px;
+        height: 50px;
+        padding-top: 10px;
+        text-align: center;
+    }
+    .myvehicleContentPrice{
+       padding: 0px;
+       padding-left: 30px;
+       min-height: 90px;
+        display: block;
+    }
+    .myvehiclePrice{
+        font-weight: 300;
+        font-size: 15px;
+    }
+    .myvehicleTitle{
+        padding-top: 20px;
+        padding-bottom: 10px;
+        font-size: 19px;
+    }
+    .myvehicleNr{
+        font-size: 22px;
+        font-weight: 400;
+    }
+    .myvehicleSpan{
+        font-size: 13px;
+        font-weight: 300;
+    }
+}
+
+@media only screen and (min-width: 320px){
+    .profileBody{
+        flex: 1;
+        display: flex;
+        justify-content: center;
+    }
+    .profileDiv{
+        min-width: 95%;
+        max-width: 720px;
+        min-height: 200px;
+        padding-top: 50px;
+    }
+    .profileWelcome{
+        font-weight: 350;
+        font-size: 19px;
+    }
+    .profileSecondDiv{
+        min-width: 280px;
+        min-height: 300px;
+        padding-top: 0px;
+    }
+    #profileAnchorStyle{
+        color: black;
+        font-size: 22px;
+        font-weight: 600;
+        width: fit-content;
+    }
+    #profileAnchorStyle::after{
+        background-color: black;
+    }
+    .profileImageDiv{
+         margin-top: 60px;
+         min-width: 250px;
+         max-width: 480px;
+         min-height: 200px;
+    }
+    .profileImage{
+        width: 100%;
+        height: 100%;
+    }
+    .profileDescritpionDiv{
+        padding-top: 60px;
+        min-width: 250px;
+        min-height: 300px;
+        text-align: center;
+        display: flexbox;
+        justify-content: center;
+    }
+    .profileTitle{
+        font-size: 26px;
+        padding-bottom: 40px
+    }
+    .profileContent{
+        font-size: 20px;
+        padding-left: 50px;
+        padding-right: 50px;
+        font-weight: 300;
+    }
+    .profileVisibilityB{
+        display: none;
+    }
+
+
+
+
+    .myvehicleDescritpionDiv{
+        margin-top: 30px;
+        min-width: 300px;
+        min-height: 300px;
+    }
+    .myvehicleImageDiv{
+         padding: 10px;
+         min-width: 300px;
+         min-height: 200px;
+    }
+    .myvehicleImg{
+        width:  100%;
+        height: 100%;
+        border-radius: 20px;
+    }
+    .myvehicleContent{
+        min-width: 280px;
+        margin-left: 12px;
+        margin-right: 12px; 
+        padding: 10px;
+        border-radius: 20px;   
+        min-height: 120px;
+        max-height: 200px;
+    }
+    .myvehicleFlex{
+        display: flex;
+        justify-content: center;
+        gap:10px
+    }
+    .myvehicleCarDetails{
+        flex: 1 1 33.333%;
+        min-width: 80px;
+        min-height: 100px;
+        text-align: center;
+    }
+    .myvehicleCarDetails2{
+        min-width: 280px;
+        height: 50px;
+        padding-top: 10px;
+        text-align: center;
+    }
+    .myvehicleContentPrice{
+       padding: 0px;
+       padding-left: 30px;
+       min-height: 90px;
+        display: block;
+    }
+    .myvehiclePrice{
+        font-weight: 300;
+        font-size: 15px;
+    }
+    .myvehicleTitle{
+        padding-top: 20px;
+        padding-bottom: 10px;
+        font-size: 19px;
+    }
+    .myvehicleNr{
+        font-size: 22px;
+        font-weight: 400;
+    }
+    .myvehicleSpan{
+        font-size: 13px;
+        font-weight: 300;
+    }
+}
+
+
+@media only screen and (min-width: 480px){
+    .profileVisibilityB{
+        display:block;
+    }
+    .profileVisibilityA{
+        display: none;
+    }
+    .profileImageDiv{
+        min-width: 480px;
+        max-width: 760px;
+   }
+}
+
+@media only screen and (min-width: 760px){
+    .profileImageDiv{
+        min-width: 700px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+   }
+   .profileVisibilityA{
+    display: none;
+}
+    .profileContent{
+        padding-left: 200px;
+        padding-right: 200px;
+    }
+    .profileWelcome{
+         padding-bottom: 50px;
+    }
+    .profileDiv{
+        min-width: 55%;
+    }
+}
+@media only screen and (min-width: 1600px){
+    .myvehicleDescritpionDiv{
+       display: flex;
+    }
+    .myvehicleImageDiv{
+        min-width: 500px;
+        max-width: 950px;
+        min-height: 300px;
+   }
+   .myvehicleContent{
+        flex: 0 1 100%;
+}
+   .myvehicleContentPrice{
+     height: 40px;
+     align-self:flex-start;
+}
+   .myvehicleFlex2{
+    display: flex;
+     justify-content: center;
+     align-items: center;
+}
+   .myvehicleContent{
+    margin-top: 40px;
+   }
+   .myvehicleContentPrice{
+    background-color: white;
+   }
+}
+
+
+@media only screen and (min-width: 1900px){
+    .profileDiv{
+        min-width: 55%;
+        max-width: 90%;
+    }
+}
+
