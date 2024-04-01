@@ -1,12 +1,44 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import {Carousel} from "react-responsive-carousel"
 import CarouselDiv from "../components/CarouselDiv";
+import {useParams } from "react-router-dom";
 
-function Model(){
 
+function Model(props){
+   
+  const [data, setData]=useState([{}])
+
+  const {id} = useParams();
+
+  useEffect(() =>{
+    fetch("/model/"+id).then(
+      response => response.json()
+    ).then(dataa =>{
+         setData(dataa)
+    })
+  },[])
+   
+function createModel(model){
+  return (
+    <CarouselDiv 
+       key={model.id} 
+        id={model.id} 
+      image={model.image}
+       title={model.title}
+      price={model.price}
+      emissions={model.emissions}
+      acceleration={model.acceleration}
+      kw={model.kw}
+      ps={model.ps}
+      speed={model.speed}
+     />
+  )
+}
+   const len = data.lengthh
+  
   return(<div className="mainBody">
     <Header />
     <div className="modelBody" >
@@ -18,74 +50,117 @@ function Model(){
             </div>
             <div className="modelStartDivContent">
             <div className="modelImageCarDiv">
-             <img className="modelImageCar" src="https://images-porsche.imgix.net/-/media/A476D89B333349D39A089152383C7E85_22CDF95F742F459BBA7DA94B27AD66BC_TA24Q3BIX0010-taycan-side?w=1400&q=85&crop=faces%2Centropy%2Cedges&auto=format" />
+             <img className="modelImageCar" src={data.image} />
             </div>
             </div>
-            <h1 className="roboto modelStart_h1">Taycan</h1>
-            <p className="roboto modelStart_p">from £ 86,500.00 incl. VAT</p>
-            <p className="roboto modelStart_p_consumption">Electrical consumption combined (model range): 19.7 - 16.7 kWh/100 km, CO2 emissions combined* (model range): 0 g/km</p>
+            <h1 className="roboto modelStart_h1">{data.title}</h1>
+             
+            
+  
+
+            <p className="roboto modelStart_p">from {data.price} incl. VAT</p>
+            <p className="roboto modelStart_p_consumption">{data.emissions}</p>
         </div>
         <div className="modelMiddleDiv">
             <div className="modelDescriptionDiv">
-            <p className="modelNumber_p roboto">4.8<span className="modelSmall_Letter">s</span></p>
+            <p className="modelNumber_p roboto">{data.acceleration}<span className="modelSmall_Letter">s</span></p>
             <p className="modelDescription_p roboto">Acceleration 0-62 mph (0-100 km/h) with Launch Control</p>
-            <p className="modelNumber_p roboto">300<span className="modelSmall_Letter">kW / </span>408<span className="modelSmall_Letter">PS</span></p>
+            <p className="modelNumber_p roboto">{data.kw}<span className="modelSmall_Letter">kW / </span>{data.ps}<span className="modelSmall_Letter">PS</span></p>
             <p className="modelDescription_p roboto">Maximum power (kW)/Maximum power (PS) Details of the measuring method can be found at <a className="inputAnchor" href="/model"> www.porsche.com/gtr21</a></p>
-            <p className="modelNumber_p roboto">143<span className="modelSmall_Letter">mph</span></p>
+            <p className="modelNumber_p roboto">{data.speed}<span className="modelSmall_Letter">mph</span></p>
             <p className="modelDescription_p roboto">Top speed</p>
             </div>
             <div className="modelImageCarDiv_padding">
-              <img className="modelImageCar modelImageCarSecond" src="https://images-porsche.imgix.net/-/media/8BEAA9C5AB93489C8F2415AE4C9329F1_C2002BAFD67942E7B6E4E23C7FB5E952_TA24Q3BIX0011-taycan-front?w=750&q=85&auto=format" />
+              <img className="modelImageCar modelImageCarSecond" src={data.imageFront} />
             </div>
         </div> 
         <div className="modelMiddle_SecondDiv">
            <div className="model_Second_ImageCarDiv modelDown">
-             <img className="modelImageCar modelImageCarRadius" src="https://images-porsche.imgix.net/-/media/B5EE8921E27E4796A4970472BD26D260_055186BBAF4441B39A545330CD91EAAE_TA24Q3EOX0002-taycan-turbo-s-driving?w=652&ar=3%3A4&q=45&dpr=2&auto=format" />     
+             <img className="modelImageCar modelImageCarRadius" src={data.imageFirst} />     
            </div>
            <div className="model_Second_ImageCarDiv modelUp">
-             <img className="modelImageCar modelImageCarRadius" src="https://images-porsche.imgix.net/-/media/6AF5BE9FDA3C45EE9C55B01EEC780D9C_CA51670E2BD042FBAFAFD13CF41CA7B1_TA24Q3EOX0005-taycan-turbo-s-charging?w=652&ar=3%3A4&q=45&dpr=2&auto=format" />     
+             <img className="modelImageCar modelImageCarRadius" src={data.imageSecond} />     
            </div>
-           
         </div>
+        
         <div className="modelMiddle_ThirdDiv modelMiddle_ThirdDiv1">
-             <Carousel centerMode={false} centerSlidePercentage={0} showStatus={false}  stopOnHover="true" swipeable={true} showThumbs={false} swipeScrollTolerance={2} emulateTouch={true}>             
-                 <div>
-                   <CarouselDiv />
-                  </div>
+             <Carousel centerMode={false} centerSlidePercentage={0} showStatus={false}  stopOnHover="true" swipeable={true} showThumbs={false} swipeScrollTolerance={2} emulateTouch={true}>    
+             {/*Adding array[i] to CarouselDiv*/}
+             {data.models? data.models.map(model =>(
                   <div>
-                   <CarouselDiv />
+                  <CarouselDiv 
+                  key={model.id} 
+                  id={model.id} 
+                  image={model.image}
+                  title={model.title}
+                  price={model.price}
+                  emissions={model.emissions}
+                  acceleration={model.acceleration}
+                  kw={model.kw}
+                  ps={model.ps}
+                  speed={model.speed}
+                  />
                   </div>
-                  <div>
-                   <CarouselDiv />
-                  </div>
-             </Carousel>
-        </div>
-        <div className="modelMiddle_ThirdDiv modelMiddle_ThirdDiv2">
+                 ))
+                :null
+                }
+               {/*Adding array[i] to CarouselDiv*/}
+            </Carousel>
+            </div>
+
+       <div className="modelMiddle_ThirdDiv modelMiddle_ThirdDiv2">           
+         {data.models?
              <Carousel showArrows={true} centerSlidePercentage={0} showStatus={false}  stopOnHover="true" swipeable={true} showThumbs={true} swipeScrollTolerance={2} emulateTouch={true}>             
-                  <div className="modelInlineDiv modelInlineDiv_Padding">
-                   <CarouselDiv />
-                   <CarouselDiv />
-                   </div> 
-                   <div className="modelInlineDiv modelInlineDiv_Padding2">
-                   <CarouselDiv />
-                   <CarouselDiv />
-                   </div>
+                            {len === 1?
+                             <div className="modelInlineDiv modelInlineDiv_Padding2">
+                                {createModel(data.models[0])}
+                             </div>
+                             :
+                             <div className="modelInlineDiv modelInlineDiv_Padding">
+                               {createModel(data.models[0])}
+                               {createModel(data.models[1])}
+                             </div> 
+                            }
+
+                           {len === 3?
+                           <div className="modelInlineDiv modelInlineDiv_Padding2">
+                               {createModel(data.models[2])}
+                            </div> 
+                              :
+                            <div className="modelInlineDiv modelInlineDiv_Padding">
+                              {createModel(data.models[2])}
+                              {createModel(data.models[3])}
+                            </div> 
+                           }
+
+                           {len === 5?
+                           <div className="modelInlineDiv modelInlineDiv_Padding">
+                              {createModel(data.models[4])}
+                           </div> 
+                           :
+                            <div className="modelInlineDiv modelInlineDiv_Padding">
+                               {createModel(data.models[4])}
+                               {createModel(data.models[5])}
+                            </div>
+                            }
              </Carousel>
+                       :null}                            
         </div>
         <div className="modelMiddle_ThirdDiv modelMiddle_ThirdDiv3">
-             <Carousel
-            
-            className="relative"
-             color-secondary centerSlidePercentage={0} showStatus={false}  swipeable={true} showThumbs={true} swipeScrollTolerance={2} emulateTouch={true}>             
-                  <div className="modelInlineDiv modelInlineDiv_Padding" >
-                   <CarouselDiv />
-                   <CarouselDiv />
-                   <CarouselDiv />
-                   </div> 
-                   <div className="modelInlineDiv modelInlineDiv_Padding2">
-                   <CarouselDiv />
-                   </div>
+        {data.models?
+             <Carousel className="relative"  centerSlidePercentage={0} showStatus={false}  swipeable={true} showThumbs={true} swipeScrollTolerance={2} emulateTouch={true}>             
+                  <div className="modelInlineDiv modelInlineDiv_Padding">
+                           {createModel(data.models[0])}
+                           {createModel(data.models[1])}
+                           {createModel(data.models[2])}
+                  </div> 
+                  <div className="modelInlineDiv modelInlineDiv_Padding2">
+                           {createModel(data.models[3])}
+                           {createModel(data.models[4])}
+                           {createModel(data.models[5])}
+                  </div>
              </Carousel>
+             :null}
         </div>
 
         <div className="model_4thDiv">
@@ -113,7 +188,6 @@ function Model(){
     <Footer />
   </div>)
 }
-
 
 export default Model;
 

@@ -54,7 +54,7 @@
     }
     .homePlayerButton{ 
         min-width: 320px;
-        min-height: 15%;
+        height:max-content;
         position: absolute;
         display: flex;
         justify-content: start;
@@ -67,7 +67,97 @@
             justify-content: end;
             align-items: start;
         }
+    .homeDiv2{
+        min-width: 270px;
+        min-height: 450px;
+        margin: 20px;
+        border-radius: 10px;
+        background-image: url("https://images.unsplash.com/photo-1559533670-2195d0363733?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+        background-position: center; 
+        background-repeat: no-repeat; 
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: end;
+        text-align: center;
+    }
+    .homeDiv2P{
+        font-size: 15px;
+    }
+     
+    .homeDiv3{
+        min-width: 280px;
+        min-height: 100px;
+        margin: 15px;
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+    .homeInstaBig{
+       min-width: 100%;
+       min-height: 300px;
+       background-position: center;
+       background-repeat: no-repeat;
+       background-size: cover;
+       
+    }
+    .homeInstaSmall{
+        background-color: black;
+       width: 50%;
+       min-height: 150px;
+       margin-top: 10px;
+       background-position: center;
+       background-repeat: no-repeat;
+       background-size: cover;
+    }
+    .homeHide{
+      display: none;
+    }
+    .homeHide2{
+        display: none; 
+    }
+    .accountIconHome{
+        z-index: 180;
+    }
+    .homeInstagramPosition{
+        display: flex;
+        justify-content: end;
+        align-items: end;
+    }
+    .homeInstagram1{
+        background-image: url("https://pbs.twimg.com/media/GJxx2fHW8AANaSa?format=jpg&name=large");
+        
+    }
+    .homeInstagram2{
+        background-image: url("https://pbs.twimg.com/media/GIZ0bglXgAAyjs-?format=jpg&name=large");
+      
+    }
+    .homeInstagram3{
+        background-image: url("https://scontent-lhr8-1.xx.fbcdn.net/v/t39.30808-6/432303299_800132325478454_244486591407538585_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=5f2048&_nc_ohc=nnPR_JQ85ywAX96fIfK&_nc_ht=scontent-lhr8-1.xx&oh=00_AfB2XvdJWDIwCYbSj17aSwMriNR0ZDfNSP4OUHOmAdIEvg&oe=660D4D8E");
+  
+    }
+    .homeInstagram4{
+        background-image: url("https://scontent-lhr8-1.xx.fbcdn.net/v/t39.30808-6/430609337_795410482617305_39860885554114985_n.jpg?stp=dst-jpg_p480x480&_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_ohc=n_gB-VBkowoAX-5V9th&_nc_ht=scontent-lhr8-1.xx&oh=00_AfDwznB0OFCJH5og5vDbrJ6AA9jsXwfopVfD2EbldfkwOA&oe=660D58D0");
+      
+    }
+    .homeInstagram5{
+        background-image: url("https://scontent-lhr8-2.xx.fbcdn.net/v/t39.30808-6/419044791_810465777778442_6912292583021108140_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=KrAK3mDCIg0AX9N4qNR&_nc_ht=scontent-lhr8-2.xx&oh=00_AfDLev87dQf-NmultzHla4sAKNdGghzRV12lPvN4pbBa1w&oe=660D36F9");
+ 
+    }
+    .homeInstagram6{
+        background-image: url("https://preview.redd.it/the-718-spyder-rs-represents-the-most-powerful-version-of-v0-l707k6mnvxbb1.jpg?width=1080&crop=smart&auto=webp&s=b0533239e4a623c1ef5413b4343473b13cf1ee41");
+    }
+    .homeImage{
+    width:50px;
+    height:50px;
+    padding:3px
+    }
+
 }
+/*.homeImage{
+    width:50px;
+    height:50px;
+    padding:20px
+    }*/
 
 @media only screen and (min-width:320px){    
     .homePlayerButton{ 
@@ -81,6 +171,14 @@
     .homePositionButton{
         width: 80px;
         height: 170px;
+    }
+    .homeDiv2{
+        padding-bottom: 10px;
+    }
+}
+@media only screen and (max-width:480px){   
+    .homeDiv3 {
+        min-width: 100%;
     }
 }
 
@@ -100,9 +198,45 @@
         width: 100px;
         height: 200px;
     }
+    .homeDiv3{
+        display: inline-flex;
+        justify-content: center;
+        min-width: 97%;
+    }
+    .homeInstaCard{
+        margin-left: 5px;
+        margin-right: 5px;
+        min-width: 48%;
+        max-width: 350px;
+     }
+     /*min-width: 215px;
+        max-width: 350px;
+        */
+    .homeInstaBig{
+         margin: 0px;
+         min-height: 230px;
+         min-width: 96%;
+        }
+     .homeInstaSmall{
+        min-height: 70px;
+     }
+     .homeInstaSmall2{
+        margin-top: 0px;
+        margin-bottom: 10px;
+     }
+     .homeHide{
+        display: block;
+      }
+    .accountIcon{
+        visibility: visible;
+      }
+      .homeImage{
+        width:30px;
+        height:30px;
+        }
 }
 @media only screen and (min-width:600px){  
-.homePlayerButton{ 
+    .homePlayerButton{ 
         min-width: 100%;
         min-height: 39%; 
     } 
@@ -126,6 +260,25 @@
         width: 100px;
         height: 250px;
     }
+    .homeDiv2P{
+        font-size: 18px;
+    }
+    .homeHide2{
+        display: block; 
+    }
+    .homeInstaCard{
+        min-width: 32%;
+    }
+}
+@media only screen and (min-width:850px){   
+    .homeInstaBig{
+        min-height: 270px;
+    }
+    .homeImage{
+        width:40px;
+        height:40px;
+        padding:3px
+        }
 }
 @media only screen and (min-width:1000px){   
     .homeContentCards{
@@ -139,6 +292,16 @@
     }
     .homePositionButton{
         height: 300px;
+    }
+    .homeDiv2{
+      min-height: 700px;
+      padding-bottom: 15px;
+    }
+    .homeInstaSmall{
+        min-height: 100px;
+    }
+    .homeInstaBig{
+        min-height: 330px;
     }
 }
 @media only screen and (min-width:1300px){   
@@ -163,6 +326,12 @@
     .homePositionButton{
         height: 300px;
     }
+    .homeDiv2P{
+        font-size: 21px;
+    }
+    .homeInstaCard{
+        min-width: 25%;
+    }
 }
 @media only screen and (min-width:1610px){ 
     .homePlayerButton{ 
@@ -174,6 +343,27 @@
     .homePositionButton{
         height: 250px;
     }
+    .homeDiv2{
+        background-position: 50% 75%;
+        justify-content: start;
+        align-items: center;
+    }
+    .homeDiv2P{
+         width: 800px;
+         font-size: 35px;
+    }
+    .homeAddPadding{
+        margin-left: 20px;
+    }
+    
+    .homeInstaCard{
+        min-width: 25%;
+    }
+    .homeImage{
+        width:50px;
+        height:50px;
+        padding:15px
+        }
 }
 
 @media only screen and (min-width:1920px){ 
@@ -187,4 +377,74 @@
     width: 200px;
     height: 250px;
 }
+.homeDiv3{
+    min-width: 80%;
 }
+.homeInstaBig{
+    min-height: 300px;
+}
+.homeInstaSmall{
+    min-height: 200px;
+}
+}
+@media only screen and (min-width:2400px){ 
+    .homeInstaBig{
+        min-height: 450px;
+    }
+    .homeInstaSmall{
+        min-height: 250px;
+    }
+}
+
+
+@media only screen and (min-height:1200px) and (min-width:320px) {
+    .homePlayerButton{ 
+          min-height: 20%;
+    }
+}
+@media only screen and (min-height:1200px) and (min-width:480px) {
+    .homePlayerButton{ 
+        min-height: 23%;
+  }
+}
+@media only screen and (min-height:1200px) and (min-width:600px) {
+    .homePlayerButton{ 
+        min-height: 30%;
+  }
+}
+@media only screen and (min-height:1200px) and (min-width:1000px) {
+    .homePlayerButton{ 
+        min-height: 40%;
+  }
+}
+@media only screen and (min-height:1200px) and (min-width:1300px) {
+    .homePlayerButton{ 
+        min-height: 56%;
+  }
+}
+@media only screen and (min-height:1200px) and (min-width:1650px) {
+    .homePlayerButton{ 
+        min-height: 65%;
+  }
+}
+@media only screen and (min-height:1200px) and (min-width:2000px) {
+    .homePlayerButton{ 
+        min-height: 75%;
+  }
+}
+@media only screen and (min-height:1200px) and (min-width:2300px) {
+    .homePlayerButton{ 
+        min-height: 85%;
+  }
+}
+
+@media only screen and (min-height:1200px) and (min-width:2560px) {
+    .homePlayerButton{ 
+        min-height: 96%;
+  }
+}
+
+
+
+
+

@@ -4,11 +4,17 @@ import Header from "../components/Header";
 import { useState } from "react";
 import Footer from "../components/Footer"
 import ReactPlayer from 'react-player'
-import Video from "./images/porschemp4.mp4"
+import Video1 from "./images/porschemp4.mp4"
+import Video2 from "./images/presentation1.mp4"
+import Video3 from "./images/presentation2.mp4"
+import Video4 from "./images/presentation3.mp4"
 import Card from "../components/HomeCard"
 import IconButton from '@mui/material/IconButton';
 import PlayCircle from '@mui/icons-material/PlayCircleOutline';
 import PauseCircle from '@mui/icons-material/PauseCircleOutline';
+import Video from "../components/Video";
+import Photo1 from "./images/instagram1.jpg"
+import Porche from "./images/porche.jpg"
 
 function Home(){
    const[pause, setPause]=useState(true)
@@ -24,7 +30,7 @@ function Home(){
      <Header />
         <div className="homeBody">
            <div className="homePlayer">
-             <ReactPlayer playIcon={true} playing={pause} loop={true} height="100%" width="100%"  muted={true} url={Video} />
+             <ReactPlayer playIcon={true} playing={pause} loop={true} height="100%" width="100%"  muted={true} url={Video1} />
              <div className="homePlayerButton">
               <div className="homePositionButton">
                     {!pause? 
@@ -78,9 +84,74 @@ function Home(){
                  />
              </div>
             </div>
+   
+
+          
+
+            <div className="homeDivCentering">
+            <div className="homeDiv3">
+                <div className="homeInstaCard">
+                  
+                     <div className="homeInstaBig homeInstagramPosition homeInstagram1" >                   
+                            <a href="https://www.instagram.com/p/C5Ds9RovIfG/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="><img className="homeImage" src="https://cdn4.iconfinder.com/data/icons/picons-social/57/38-instagram-2-512.png" /></a>
+                     </div>
+                 
+                  <div className="homeDivCentering">
+                     <div className="homeInstaSmall homeInstagram2" style={{marginRight:"5px"}}>                     
+                      <a href="https://www.instagram.com/p/C47nFO5I3vg/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="> <img src="https://cdn4.iconfinder.com/data/icons/picons-social/57/38-instagram-2-512.png" className="homeImage" /></a>         
+                     </div>
+                     <div className="homeInstaSmall" style={{marginLeft:"5px"}}>
+                            <Video src={Video3} />  
+                     </div> 
+                  </div>
+                 </div>
+
+                 <div className="homeInstaCard homeHide">
+                 <div className="homeDivCentering">
+                     <div className="homeInstaSmall homeInstaSmall2" style={{marginRight:"5px"}}>
+                            <Video src={Video2} />
+                     </div>
+                     <div className="homeInstaSmall homeInstaSmall2 homeInstagram3 homeInstagramPosition" style={{marginLeft:"5px"}}>
+                        <a href="https://www.instagram.com/p/C4VGBfqKPt5/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="> <img src="https://cdn4.iconfinder.com/data/icons/picons-social/57/38-instagram-2-512.png" className="homeImage" /></a>
+                     </div>
+                  </div>
+                  <div>
+                     <div className="homeInstaBig homeInstagram4 homeInstagramPosition">
+                     <a href="https://www.instagram.com/p/C4AfqgPKeeA/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="> <img src="https://cdn4.iconfinder.com/data/icons/picons-social/57/38-instagram-2-512.png" className="homeImage" /></a>
+                     </div>
+                  </div>
+                 </div>
+
+                 <div className="homeInstaCard homeHide2">
+                 <div>
+                     <div className="homeInstaBig homeInstagram5"> 
+                        <a href="https://www.instagram.com/p/C4xaxP1K5IW/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="> <img src="https://cdn4.iconfinder.com/data/icons/picons-social/57/38-instagram-2-512.png" className="homeImage" /></a> 
+                     </div>
+                  </div>
+
+                  <div className="homeDivCentering">
+                     <div className="homeInstaSmall homeInstagram6" style={{marginRight:"5px"}}>                     
+                     <a href="https://www.instagram.com/p/C2973cCqtsx/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="> <img src="https://cdn4.iconfinder.com/data/icons/picons-social/57/38-instagram-2-512.png" className="homeImage" /></a> 
+                     </div>
+                     <div className="homeInstaSmall" style={{marginLeft:"5px"}}>
+                            <Video src={Video4} />
+                     </div>
+                  </div>
+                 </div>
+                </div>
+              </div>
+
+            <div className="homeDiv2">
+            <div className="homeAddPadding">
+               <p className="roboto homeCardTitle homeDiv2P">The the new GT3 models are here. Explore the driving experience whith the new engines</p>
+              <div className="homeDivCentering"><button style={{marginBottom:"5px", marginTop:"14px"}} id=" modelMarginTop" className="loginInput loginButton signupInput signupButton modelButton">Explore the range</button></div>
+            </div>
+            </div>
         </div>
      <Footer />
      </div>)
 }
+
+
 export default Home;
  

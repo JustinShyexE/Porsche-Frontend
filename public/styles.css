@@ -229,6 +229,7 @@ a{
 /*Location Icon Bar Opening and Closing -->*/
 .locationON{
   position: absolute;
+  z-index: 1;
   right: 200px;
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
