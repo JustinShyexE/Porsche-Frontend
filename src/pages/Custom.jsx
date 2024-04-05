@@ -33,9 +33,9 @@ function Model(){
                 </div>
             </Carousel>
             </div>
-
+{/*style={{minWidth:"100px",maxWidth:"220px",minHeight:"30px",display:"flex", justifyContent:"center"}} */}
             <div className="customColorsDiv">
-            <p className="roboto customH1">Colors</p>
+            <p className="roboto customH1">Colors <span className="roboto" style={{float:"right",fontWeight:"400",fontSize:"22px",paddingRight:"20px"}}>£ 312.121</span></p>
             <div className="customAllColorsDiv">
               <p className="roboto customH1" style={{fontSize:"19px",paddingBottom:"0px"}}>Contrasts </p>
                <ColorDivMain colorName1="White" colorName2="Black" colorCode1="#efefef" colorCode2="#000000" />

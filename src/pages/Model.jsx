@@ -5,7 +5,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import {Carousel} from "react-responsive-carousel"
 import CarouselDiv from "../components/CarouselDiv";
 import {useParams } from "react-router-dom";
-
+import cayman from "./images/718_cayman.png"
 
 function Model(props){
    
@@ -21,43 +21,57 @@ function Model(props){
     })
   },[])
    
-function createModel(model){
-  return (
-    <CarouselDiv 
-       key={model.id} 
-        id={model.id} 
-      image={model.image}
-       title={model.title}
-      price={model.price}
-      emissions={model.emissions}
-      acceleration={model.acceleration}
-      kw={model.kw}
-      ps={model.ps}
-      speed={model.speed}
-     />
-  )
-}
-   const len = data.lengthh
-  
+  function createModel(model){
+    return (
+      <CarouselDiv 
+         key={model.id} 
+          id={model.id} 
+        image={model.image}
+         title={model.title}
+        price={model.price}
+        emissions={model.emissions}
+        acceleration={model.acceleration}
+        kw={model.kw}
+        ps={model.ps}
+        speed={model.speed}
+       />
+      )
+    }
+ if(data.models){
+    const array = data.models
+    var rows = array.reduce(function (rows, key, index) { 
+        return (index % 2 == 0 ? rows.push([key]) 
+          : rows[rows.length-1].push(key)) && rows;
+      }, []);
+      console.log(rows)
+    //
+    const array2 = data.models
+    var rows2 = array2.reduce(function (rows2, key, index) { 
+          return (index % 3 == 0 ? rows2.push([key]) 
+            : rows2[rows2.length-1].push(key)) && rows2;
+        }, []);  
+    }
+
+  if(id!=="taycan" && id!=="cross-turismo" && id!=="sport-turismo" && id!=="cayman" && id!=="cayman-gt4-rs" && id!=="718-spyder-rs" && id!=="911-carrera" && id!=="911-turbo" && id!=="911-turbo-s" && id!=="911-dakar" && id!=="911-gt3"
+  && id!=="911-gt3-rs" && id!=="911-st" && id!=="911-targa"
+  )return (<h1>Error 404 Page not Found</h1>)
+
   return(<div className="mainBody">
     <Header />
     <div className="modelBody" >
         <div className="modelStartDiv">
             <div className="modelStartDivContent">
             <div className="modelImageLogoDiv">
-                 <img className="modelImageLogo" src="https://www.taycanforum.com/forum/attachments/taycan-jpg.11066/" />   
+                 <img className="modelImageLogo" src={data.logo} />   
             </div>
             </div>
             <div className="modelStartDivContent">
             <div className="modelImageCarDiv">
              <img className="modelImageCar" src={data.image} />
+            </div>                  {/** {data.image} */}
             </div>
-            </div>
+            <hr />
             <h1 className="roboto modelStart_h1">{data.title}</h1>
-             
-            
-  
-
             <p className="roboto modelStart_p">from {data.price} incl. VAT</p>
             <p className="roboto modelStart_p_consumption">{data.emissions}</p>
         </div>
@@ -88,18 +102,7 @@ function createModel(model){
              {/*Adding array[i] to CarouselDiv*/}
              {data.models? data.models.map(model =>(
                   <div>
-                  <CarouselDiv 
-                  key={model.id} 
-                  id={model.id} 
-                  image={model.image}
-                  title={model.title}
-                  price={model.price}
-                  emissions={model.emissions}
-                  acceleration={model.acceleration}
-                  kw={model.kw}
-                  ps={model.ps}
-                  speed={model.speed}
-                  />
+                     {createModel(model)}
                   </div>
                  ))
                 :null
@@ -110,78 +113,52 @@ function createModel(model){
 
        <div className="modelMiddle_ThirdDiv modelMiddle_ThirdDiv2">           
          {data.models?
-             <Carousel showArrows={true} centerSlidePercentage={0} showStatus={false}  stopOnHover="true" swipeable={true} showThumbs={true} swipeScrollTolerance={2} emulateTouch={true}>             
-                            {len === 1?
-                             <div className="modelInlineDiv modelInlineDiv_Padding2">
-                                {createModel(data.models[0])}
-                             </div>
-                             :
-                             <div className="modelInlineDiv modelInlineDiv_Padding">
-                               {createModel(data.models[0])}
-                               {createModel(data.models[1])}
-                             </div> 
-                            }
-
-                           {len === 3?
-                           <div className="modelInlineDiv modelInlineDiv_Padding2">
-                               {createModel(data.models[2])}
-                            </div> 
-                              :
-                            <div className="modelInlineDiv modelInlineDiv_Padding">
-                              {createModel(data.models[2])}
-                              {createModel(data.models[3])}
-                            </div> 
-                           }
-
-                           {len === 5?
-                           <div className="modelInlineDiv modelInlineDiv_Padding">
-                              {createModel(data.models[4])}
-                           </div> 
-                           :
-                            <div className="modelInlineDiv modelInlineDiv_Padding">
-                               {createModel(data.models[4])}
-                               {createModel(data.models[5])}
-                            </div>
-                            }
+             <Carousel showArrows={true} centerSlidePercentage={0} showStatus={false}  stopOnHover="true" swipeable={true} showThumbs={true} swipeScrollTolerance={2} emulateTouch={true}>       
+                          {rows.map(row=>(
+                                 <div className="modelInlineDiv modelInlineDiv_Padding">
+                                          {row.map(object=> createModel(object))}
+                                 </div>
+                          ))}                          
              </Carousel>
-                       :null}                            
+              :null}      
         </div>
         <div className="modelMiddle_ThirdDiv modelMiddle_ThirdDiv3">
         {data.models?
              <Carousel className="relative"  centerSlidePercentage={0} showStatus={false}  swipeable={true} showThumbs={true} swipeScrollTolerance={2} emulateTouch={true}>             
-                  <div className="modelInlineDiv modelInlineDiv_Padding">
-                           {createModel(data.models[0])}
-                           {createModel(data.models[1])}
-                           {createModel(data.models[2])}
-                  </div> 
-                  <div className="modelInlineDiv modelInlineDiv_Padding2">
-                           {createModel(data.models[3])}
-                           {createModel(data.models[4])}
-                           {createModel(data.models[5])}
-                  </div>
+                  {rows2.map(row=>(
+                                 <div className="modelInlineDiv modelInlineDiv_Padding">
+                                          {row.map(object=> createModel(object))}
+                                 </div>
+                          ))}  
              </Carousel>
              :null}
         </div>
-
         <div className="model_4thDiv">
             <div className="modelCard" >
-                 <div className="modelCardImageCar">           
-                  <img className="modelImageCar modelCardImageCar" src="https://images-porsche.imgix.net/-/media/ED87AF3422674AEDB2BAAC48412F6702_62B7E0A2379A4343BE4008366D287F48_TA24Q3BOX0001-01-taycan-front-and-side-mobile?w=407&q=45&dpr=2&auto=format" />   
+                 <div className="modelCardImageCar modelBackgroundimage" style={{backgroundImage: 'url(' + data.imageCard + ')'}}>           
+                        
                  </div>
                  <div className="modelCard2">
-                    <p className="roboto modelStart_p">Finance from Porsche.</p>
-                    <p className="roboto modelDescription_p14px modelMarginTop">Driving a Porsche is an exciting and unique experience. With Porsche Financial Services you unlock that dream. Explore the finance options available to help you secure your new all-electric Taycan.                   </p>
+                    <p className="roboto modelStart_p modelDivTitle">Finance from Porsche.</p>
+                    <p className="roboto modelDescription_p14px modelMarginTop modelDivDescription">Driving a Porsche is an exciting and unique experience. With Porsche Financial Services you unlock that dream. Explore the finance options available to help you secure your new all models.</p>
                     <div className="modelCardButton visibilitySetA">
-                       <button id="modelMarginRigh33px modelMarginTop" className="loginInput loginButton signupInput signupButton modelButton">Configure & Buy</button>
+                       <button id="modelMarginRigh33px modelMarginTop" className="loginInput loginButton signupInput signupButton modelButton">Discover finance options</button>
                     </div>
                  </div>
             </div>
         </div>
-        
         <div style={{paddingTop:"0px", minHeight:"100px"}} className="modelMiddle_SecondDiv">
-          <div style={{padding:"20px", paddingTop:"20px"}}>
+          <div  className="modelLastDiv">
             <p className="roboto modelStart_p">Consumption and Emissions.</p>
-            <p className="roboto modelDescription_p14px"><span className="modelDescription_p500w">Taycan Models (WLTP)*:</span> Electrical consumption combined (model range): 19.7 - 16.7 kWh/100 km, CO2 emissions combined* (model range): 0 g/km, <span className="modelDescription_p500w">Taycan 4S Models (WLTP)*:</span> Electrical consumption combined (model range): 20.9 - 17.7 kWh/100 km, CO2 emissions combined* (model range): 0 g/km, <span className="modelDescription_p500w">Taycan Turbo Models (WLTP)*:</span> Electrical consumption combined (model range): 20.5 - 18.0 kWh/100 km, CO2 emissions combined* (model range): 0 g/km, <span className="modelDescription_p500w">Taycan Turbo S Models (WLTP)*:</span> Electrical consumption combined (model range): 20.5 - 17.9 kWh/100 km, CO2 emissions combined* (model range): 0 g/km, <span className="modelDescription_p500w">Taycan Turbo GT with Weissach Package Models (WLTP)*:</span> Electrical consumption combined (model range): 21.3 - 20.6 kWh/100 km, CO2 emissions combined* (model range): 0 g/km, <span className="modelDescription_p500w">Taycan Turbo GT Models (WLTP)*:</span> Electrical consumption combined (model range): 21.6 - 20.7 kWh/100 km, CO2 emissions combined* (model range): 0 g/km</p>
+            <p className="roboto modelDescription_p14px">
+             {/*map from index 1+*/}
+              {data.models? data.models.map(model =>
+                <span >
+                <span className="modelDescription_p500w"> {model.title} Models (WLTP)*: </span>
+                {model.emissions}
+                 </span>
+              ):null}
+               </p>
           </div>
         </div>
     </div>
@@ -192,4 +169,3 @@ function createModel(model){
 export default Model;
 
 
-//<div className="modelBody" >

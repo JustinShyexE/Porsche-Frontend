@@ -91,14 +91,13 @@ function Home(){
             <div className="homeDivCentering">
             <div className="homeDiv3">
                 <div className="homeInstaCard">
-                  
                      <div className="homeInstaBig homeInstagramPosition homeInstagram1" >                   
-                            <a href="https://www.instagram.com/p/C5Ds9RovIfG/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="><img className="homeImage" src="https://cdn4.iconfinder.com/data/icons/picons-social/57/38-instagram-2-512.png" /></a>
+                            <a target="_blank" href="https://www.instagram.com/p/C5Ds9RovIfG/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="><img className="homeImage" src="https://cdn4.iconfinder.com/data/icons/picons-social/57/38-instagram-2-512.png" /></a>
                      </div>
                  
                   <div className="homeDivCentering">
                      <div className="homeInstaSmall homeInstagram2" style={{marginRight:"5px"}}>                     
-                      <a href="https://www.instagram.com/p/C47nFO5I3vg/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="> <img src="https://cdn4.iconfinder.com/data/icons/picons-social/57/38-instagram-2-512.png" className="homeImage" /></a>         
+                      <a target="_blank" href="https://www.instagram.com/p/C47nFO5I3vg/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="> <img src="https://cdn4.iconfinder.com/data/icons/picons-social/57/38-instagram-2-512.png" className="homeImage" /></a>         
                      </div>
                      <div className="homeInstaSmall" style={{marginLeft:"5px"}}>
                             <Video src={Video3} />  
@@ -112,12 +111,12 @@ function Home(){
                             <Video src={Video2} />
                      </div>
                      <div className="homeInstaSmall homeInstaSmall2 homeInstagram3 homeInstagramPosition" style={{marginLeft:"5px"}}>
-                        <a href="https://www.instagram.com/p/C4VGBfqKPt5/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="> <img src="https://cdn4.iconfinder.com/data/icons/picons-social/57/38-instagram-2-512.png" className="homeImage" /></a>
+                        <a target="_blank" href="https://www.instagram.com/p/C4nHlx_KxX0/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="> <img src="https://cdn4.iconfinder.com/data/icons/picons-social/57/38-instagram-2-512.png" className="homeImage" /></a>
                      </div>
                   </div>
                   <div>
                      <div className="homeInstaBig homeInstagram4 homeInstagramPosition">
-                     <a href="https://www.instagram.com/p/C4AfqgPKeeA/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="> <img src="https://cdn4.iconfinder.com/data/icons/picons-social/57/38-instagram-2-512.png" className="homeImage" /></a>
+                     <a target="_blank" href="https://www.instagram.com/p/C4igVkNqJmb/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="> <img src="https://cdn4.iconfinder.com/data/icons/picons-social/57/38-instagram-2-512.png" className="homeImage" /></a>
                      </div>
                   </div>
                  </div>
@@ -125,13 +124,13 @@ function Home(){
                  <div className="homeInstaCard homeHide2">
                  <div>
                      <div className="homeInstaBig homeInstagram5"> 
-                        <a href="https://www.instagram.com/p/C4xaxP1K5IW/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="> <img src="https://cdn4.iconfinder.com/data/icons/picons-social/57/38-instagram-2-512.png" className="homeImage" /></a> 
+                        <a target="_blank" href="https://www.instagram.com/p/C4I-GXIKMMg/?utm_source=ig_web_copy_link"> <img src="https://cdn4.iconfinder.com/data/icons/picons-social/57/38-instagram-2-512.png" className="homeImage" /></a> 
                      </div>
                   </div>
 
                   <div className="homeDivCentering">
                      <div className="homeInstaSmall homeInstagram6" style={{marginRight:"5px"}}>                     
-                     <a href="https://www.instagram.com/p/C2973cCqtsx/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="> <img src="https://cdn4.iconfinder.com/data/icons/picons-social/57/38-instagram-2-512.png" className="homeImage" /></a> 
+                     <a target="_blank" href="https://www.instagram.com/p/C2973cCqtsx/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="> <img src="https://cdn4.iconfinder.com/data/icons/picons-social/57/38-instagram-2-512.png" className="homeImage" /></a> 
                      </div>
                      <div className="homeInstaSmall" style={{marginLeft:"5px"}}>
                             <Video src={Video4} />

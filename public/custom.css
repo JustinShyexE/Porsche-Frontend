@@ -67,7 +67,6 @@
         font-size: 23px;
         padding: 18px;
         padding-right: 0px;
-        background-color: blue;
         border-top-left-radius: 10px;
         border-top-right-radius: 10px;
     }
@@ -86,13 +85,11 @@
     }
     .thumb{
         border-radius: 20px;
-        border-color: blue;
     }
     
     /*Colors*/
 
     .customBoxes{
-        background-color: blueviolet;
         min-width: 100%;
         min-height: 90px;
         max-height: 300px;
@@ -100,8 +97,7 @@
         gap: 5px
     }
     .customColor{
-        background-color: aquamarine;
-        min-width: 138px;  /*min-width: 280px;  min-width: 138px;*/
+        min-width: 138px; 
         max-width: 370px;
         max-height: 70px;
         padding-top: 5px;

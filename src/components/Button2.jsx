@@ -20,7 +20,7 @@ function Button2(props){
        id={car.id}
        model={car.model}
        image={car.image}
-       link="/"
+       link={car.link}
        />)
    }
 
