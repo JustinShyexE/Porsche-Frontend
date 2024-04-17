@@ -11,7 +11,7 @@ function HomeCard(props){
                       <p className="roboto homeCardTitle">{props.title}</p>
                      <p className="roboto homeCardPrice">from {props.price} incl. VAT</p>
                       <div className="homeDivCentering">
-                         <button style={{marginBottom:"5px", marginTop:"14px"}} id=" modelMarginTop" className="loginInput loginButton signupInput signupButton modelButton homeButton">All {props.model} Models</button>
+                        <a href={props.link}><button style={{marginBottom:"5px", marginTop:"14px", cursor:"pointer"}} id=" modelMarginTop" className="loginInput loginButton signupInput signupButton modelButton homeButton">All {props.model} Models</button></a>
                     </div>
                   </div>
                </div>

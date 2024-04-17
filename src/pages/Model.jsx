@@ -5,7 +5,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 import {Carousel} from "react-responsive-carousel"
 import CarouselDiv from "../components/CarouselDiv";
 import {useParams } from "react-router-dom";
-import cayman from "./images/718_cayman.png"
+
 
 function Model(props){
    
@@ -25,7 +25,7 @@ function Model(props){
     return (
       <CarouselDiv 
          key={model.id} 
-          id={model.id} 
+        id={model.id} 
         image={model.image}
          title={model.title}
         price={model.price}
@@ -34,6 +34,7 @@ function Model(props){
         kw={model.kw}
         ps={model.ps}
         speed={model.speed}
+        link={model.link}
        />
       )
     }
@@ -52,12 +53,14 @@ function Model(props){
         }, []);  
     }
 
+
   if(id!=="taycan" && id!=="cross-turismo" && id!=="sport-turismo" && id!=="cayman" && id!=="cayman-gt4-rs" && id!=="718-spyder-rs" && id!=="911-carrera" && id!=="911-turbo" && id!=="911-turbo-s" && id!=="911-dakar" && id!=="911-gt3"
   && id!=="911-gt3-rs" && id!=="911-st" && id!=="911-targa"
   )return (<h1>Error 404 Page not Found</h1>)
 
   return(<div className="mainBody">
     <Header />
+    <div style={{height:"90px",width:"50px"}}></div>
     <div className="modelBody" >
         <div className="modelStartDiv">
             <div className="modelStartDivContent">
@@ -70,7 +73,12 @@ function Model(props){
              <img className="modelImageCar" src={data.image} />
             </div>                  {/** {data.image} */}
             </div>
-            <hr />
+
+            <div class="homeCarsDiv">
+                {data.links? data.links.map(link =>  <a id="homeAnchorStyle" class="btn btnsize" href={link.link}>{link.name}</a> ):null}
+            </div>
+
+            <hr />           
             <h1 className="roboto modelStart_h1">{data.title}</h1>
             <p className="roboto modelStart_p">from {data.price} incl. VAT</p>
             <p className="roboto modelStart_p_consumption">{data.emissions}</p>

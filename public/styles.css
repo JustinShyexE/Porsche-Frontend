@@ -12,6 +12,9 @@ body{
 .header{
   background-color: #181818;
   height: 65px;
+  position: fixed;
+  width: 100%;
+  z-index: 200;
   }
 .logo{
   color: white;
@@ -317,6 +320,22 @@ a{
     top: -30px;
     left: 346px;
   }
+  .homeCarsDiv{
+    min-height: 0px;
+    min-width: 320px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    gap:40px;
+  }
+  #homeAnchorStyle{
+    font-size: 22px;
+    color: #181818;
+    font-weight: 700;
+  }
+  #homeAnchorStyle::after{
+    background-color: #181818;
+  }
 /* <--Location Icon Bar Opening and Closing*/
 
 .Row2{
@@ -361,6 +380,9 @@ a{
 @media (max-width: 2380px){
   .container{
     min-width: 2000px;
+  }
+  #homeAnchorStyle{
+    font-size: 22px;
   }
 }
 
@@ -440,6 +462,9 @@ a{
     top:65px;
     min-width: 250px;
   }
+  #homeAnchorStyle{
+    font-size: 19px;
+  }
 }
 
 @media (max-width: 830px){
@@ -477,6 +502,13 @@ a{
       left: 100px;
       top:69px;
       min-width: 250px;
+    }
+    #homeAnchorStyle{
+      font-size: 18px;
+      padding-bottom: 40px;
+    }
+    .homeCarsDiv{
+      gap: 5px;
     }
 }
 
@@ -516,6 +548,14 @@ a{
       right: 0px;
       left: 20px;
       top:70px;
+    }
+    #homeAnchorStyle{
+      font-size: 16px;
+    }
+    .homeCarsDiv{
+      display: inline-flexbox;
+      flex-wrap: wrap;
+      gap:10px
     }
 }
 
@@ -570,6 +610,9 @@ a{
     right: 0px;
     left: 0px;
     top:120px;
+  }
+  #homeAnchorStyle{
+    font-size: 15px;
   }
 }
 

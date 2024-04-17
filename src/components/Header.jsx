@@ -41,16 +41,16 @@ function Header(props){
    <div onMouseOver={handleExpand2}><Button text="Vehicle Purchase"/></div>
    <div onMouseOver={handleExpand3}><Button text="Experience"/></div>
    </div>
-   <h2 className="logo">Porsche</h2>
+   <a href="/"><h2 className="logo">Porsche</h2></a>
    {isExpanded? <div onMouseLeave={ExpandOff} className="underHeaderON">
    {whichButton[0]===1?
    <div className="Row1">
-   <Button2 text="718" />
-   <Button2 text="911" />
-   <Button2 text="Taycan" />
-   <Button2 text="Panamera" />
-   <Button2 text="Macan" />
-   <Button2 text="Cayenne" />
+   <Button2 text="718" link="/model/cayman" />
+   <Button2 text="911" link="/model/911-carrera" />
+   <Button2 text="Taycan" link="/model/taycan" />
+   <Button2 text="Panamera" link="/" />
+   <Button2 text="Macan" link="/" />
+   <Button2 text="Cayenne" link="/" />
    </div>
    :null}
    {whichButton[0]===2?

@@ -17,10 +17,10 @@ export default function App(){
                 <Route index element={<Home />} />
                 <Route path="/home" element={<Home />} />
                 <Route path="/login" element={<Login />} />
-                <Route path="/login-password" element={<Login2 />} />
+                <Route path="/login-password/:email" element={<Login2 />} />
                 <Route path="/signup" element={<SignUp />} />
                 <Route path="/model/:id" element={<Model />} />
-                <Route path="/custom" element={<Custom />} />
+                <Route path="/custom/:modelId/:id" element={<Custom />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/my-vehicle" element={<ProfileCar />} />
             </Routes>

@@ -1,10 +1,55 @@
-import React from "react";
+import React, { useState } from "react";
 import porche from "./images/porche7.jpg"
 import High from "../components/HighligthingText"
 import Icon from "./images/email.png"
+import {useParams } from "react-router-dom";
+import axios from "axios";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Login(){
 
+  const {email} = useParams();
+  const navigate = useNavigate();
+
+  const [data, setData] = useState({
+    email:email,
+    password:""
+  })
+  
+  function handleChange(event){
+    const {value, name} = event.target;
+    setData(prevValue=>{
+    if(name==="email") return {email: value, password: prevValue.password}
+    else if(name==="password") return {email: prevValue.email, password: value}
+  })
+  }
+
+  var submit=async(e)=>{
+    e.preventDefault();
+    const dataa = data
+    await fetch("http://localhost:5000/login-password",{
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(dataa)
+   })
+}
+ 
+
+  useEffect(() =>{
+   fetch("/login").then(
+    response => response.json()
+    ).then(dataa =>{      
+       if(dataa.status===true){
+        navigate("/profile")
+        window.location.reload();
+       }
+    })
+  },[])
+
+   
 
   return(<div className="loginBody"> 
             <img className="loginImage" src={porche} />
@@ -12,12 +57,13 @@ function Login(){
               <div className="login">
                 <img className="porscheLogo" src="https://assets.identity.porsche.com/img/logo.png" />
                 <div className="welcome roboto">Welcome</div>
-                <input placeholder="Email address" inputMode="email" type="text" className="loginInput" />
-                <input placeholder="Password" inputMode="password" type="password" className="loginInput loginInputPassword" />
-                <button name="action" type="submit" className="loginInput loginButton ">Continue</button>
+                <input onChange={handleChange} name="email" value={data.email} placeholder="Email address" inputMode="email" type="text" className="loginInput" />
+                <input onChange={handleChange} name="password" value={data.password} placeholder="Password" inputMode="password" type="password" className="loginInput loginInputPassword" />
+                <button onClick={submit} name="action" type="submit" className="loginInput loginButton ">Continue</button>
                 <hr className="line"/><p className="roboto loginP">LOGIN WITHOUT PASSWORD</p> <hr className="line line2"/>
-                <button name="action" type="submit" className="loginInput loginButton loginEmail"> <img className="loginIcon" src={Icon} /> Continue with email</button>
-                <p className="roboto loginP2">Don't have an account? <a className="inputAnchor" href="/login"> Sign up</a></p>
+
+                <button type="submit" className="loginInput loginButton loginEmail"> <img className="loginIcon" src={Icon} /> Continue with email</button>
+                <p className="roboto loginP2">Don't have an account? <a className="inputAnchor" href="/signup"> Sign up</a></p>
                 </div>
 </div>
                 <div className="loginFooter">

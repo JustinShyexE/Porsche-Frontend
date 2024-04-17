@@ -1,65 +1,129 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import {Carousel} from "react-responsive-carousel"
 import ColorDivMain from "../components/ColorDivMain";
-import ClickableButton from "../components/ClickableButton";
+import {useParams } from "react-router-dom";
+import taycan from "./car_colors/taycan";
+import p718 from "./car_colors/p718"
+import p911 from "./car_colors/p911"
+import axios from "axios"
 
 function Model(){
+  const [data, setData]=useState({})
+  
+  let {modelId, id} = useParams();
+  
+
+  if(modelId === "taycan"){var model = taycan}
+  if(modelId=== "p718"){var model = p718}
+  else if(modelId==="p911"){var model = p911}
+  
+  
+   
+   var group1 = model[id].group1;
+   var group2 = model[id].group2;
+   var group3 = model[id].group3;
+  //add default
+  const [urls, setURL] = useState(group1[0][0].images)
+  const [price, setPrice] = useState(model[id].price)
+ // const [title, setTitle]=useState()
+ // const [color, setColor]=useState()
+  //index1 of main array, index2 of child array that can be 0 or 1
+   
+  function chooseColor(imagesURL, pricee, title, colors){
+    if(imagesURL){
+    setURL(imagesURL)
+    var total_price = model[id].intPrice + pricee
+    let string = new Intl.NumberFormat('ja-JP', {unitDisplay:'long', style: 'currency', currency: 'GBP' }).format(
+      total_price,
+    )
+   let first =  string.slice(0,1)
+   let second = string.slice(1)
+   setPrice(first+" "+second)
+  // setTitle(title)
+  // setColor(color)
+   setData({
+    title: title,
+    price: price,
+    color: colors,
+    links: imagesURL
+  })
+  }
+  }
+  
+ 
+  //sending data to the backend
+
+  let submit=async(e)=>{
+    e.preventDefault();
+    const newData= data
+    await fetch("http://localhost:5000/custom",{
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(newData)
+   })
+}
+
+
     return (<div className="customMainBody">
     <Header />
+    <div style={{height:"65px",width:"50px"}}></div>
       <div className="customBody">
-        <h1 className="roboto customTitle">Panamera 4</h1>
+        <h1 className="roboto customTitle">{model[id].title}</h1>
         <div className="customMainDivs">
         <div className="customCarouselDiv">
          <Carousel showStatus={false} emulateTouch={true} showArrows={false} thumbWidth={100}>
-                <div className="customCarouselImg">
-                    <img className="customCarouselImg" src="https://pictures.porsche.com/rtt/iris?COSY-EU-100-1711coMvsi60AAt5FwcmBEgA4qP8iBUDxPE3Cb9pNXABuN9dMGF4tl3U0%25z8rMHIspMBvMZq6G5OtgSv31nBJaA4qh4NSEGkaW%25cz91wxuzbUUdMGLqk0D34oQDcFG1EuWXsOat2eV6iTrdPzhRc2wFlqA7fQi4DOJUPYctiTBsN5NcD2dioCoEvQDcFGdvNYnfurRAeV6iTxjlzhRc2GapqA7fQrZDOJUPYwqfTBsN5xsy2dEhev5HFhLHn0POxSeZYoOaD8JiXvBCX0" />
-                </div>
-                <div className="customCarouselImg">
-                    <img className="customCarouselImg" src="https://pictures.porsche.com/rtt/iris?COSY-EU-100-1711coMvsi60AAt5FwcmBEgA4qP8iBUDxPE3Cb9pNXABuN9dMGF4tl3U0%25z8rMH1spMBvMZq6G5OtgSv31nBJaA4qh4NSEGkaW%25cz91wxuzbUUdMGLqk0D34oQDcFG1EuWXsOat2eV6iTrdPzhRc2wFlqA7fQi4DOJUPYctiTBsN5NcD2dioCoEvQDcFGdvNYnfurRAeV6iTxjlzhRc2GapqA7fQrZDOJUPYwqfTBsN5xsy2dEhev5HFhLHn0POxSeZYoOaD8JiXvBCX0" />
-                </div>
-                <div className="customCarouselImg">
-                    <img className="customCarouselImg" src="https://pictures.porsche.com/rtt/iris?COSY-EU-100-1711coMvsi60AAt5FwcmBEgA4qP8iBUDxPE3Cb9pNXABuN9dMGF4tl3U0%25z8rMH8spMBvMZq6G5OtgSv31nBJaA4qh4NSEGkaW%25cz91wxuzbUUdMGLqk0D34oQDcFG1EuWXsOat2eV6iTrdPzhRc2wFlqA7fQi4DOJUPYctiTBsN5NcD2dioCoEvQDcFGdvNYnfurRAeV6iTxjlzhRc2GapqA7fQrZDOJUPYwqfTBsN5xsy2dEhev5HFhLHn0POxSeZYoOaD8JiXvBCX0" />
-                </div>
-                <div className="customCarouselImg">
-                    <img className="customCarouselImg" src="https://pictures.porsche.com/rtt/iris?COSY-EU-100-1711coMvsi60AAt5FwcmBEgA4qP8iBUDxPE3Cb9pNXABuN9dMGF4tl3U0%25z8rMbjZuWgRcgVGPK0rh4mctLsR6EXdGvdTmJKlEnDzCBLMkYCIFF7gKpGl3Utd21UzQKLJYnfurEhx5yPewS7OCvNzxMQ%25GXoq1edUr6FObzhewRuT0TzUx7e2H2Jc1UzQK7cTbsqYSNX5yPewk8%25CvNzxKEWGXoq1SVUr6FObMGqwRuT0kuix7Jv5c0jQvpjs3Orkm5Vb2rEUA6efcRHf3" />
-                </div>
-                <div className="customCarouselImg">
-                    <img className="customCarouselImg" src="https://pictures.porsche.com/rtt/iris?COSY-EU-100-1711coMvsi60AAt5FwcmBEgA4qP8iBUDxPE3Cb9pNXABuN9dMGF4tl3U0%25z8rMbjUuWgRcgVGPK0rh4mctLsR6EXdGvdTmJKlEnDzCBLMkYCIFF7gKpGl3Utd21UzQKLJYnfurEhx5yPewS7OCvNzxMQ%25GXoq1edUr6FObzhewRuT0TzUx7e2H2Jc1UzQK7cTbsqYSNX5yPewk8%25CvNzxKEWGXoq1SVUr6FObMGqwRuT0kuix7Jv5c0jQvpjs3Orkm5Vb2rEUA6efcRHf3" />
-                </div>
-                <div className="customCarouselImg">
-                    <img className="customCarouselImg" src="https://pictures.porsche.com/rtt/iris?COSY-EU-100-1711coMvsi60AAt5FwcmBEgA4qP8iBUDxPE3Cb9pNXABuN9dMGF4tl3U0%25z8rMbjAuWgRcgVGPK0rh4mctLsR6EXdGvdTmJKlEnDzCBLMkYCIFF7gKpGl3Utd21UzQKLJYnfurEhx5yPewS7OCvNzxMQ%25GXoq1edUr6FObzhewRuT0TzUx7e2H2Jc1UzQK7cTbsqYSNX5yPewk8%25CvNzxKEWGXoq1SVUr6FObMGqwRuT0kuix7Jv5c0jQvpjs3Orkm5Vb2rEUA6efcRHf3" />
-                </div>
-            </Carousel>
+                {urls? 
+                 urls.map(link=>(
+                 <div className="customCarouselImg">
+                   <img className="customCarouselImg" src={link} />
+                 </div>
+              ))
+               :null
+              }
+         </Carousel>
             </div>
-{/*style={{minWidth:"100px",maxWidth:"220px",minHeight:"30px",display:"flex", justifyContent:"center"}} */}
+
             <div className="customColorsDiv">
-            <p className="roboto customH1">Colors <span className="roboto" style={{float:"right",fontWeight:"400",fontSize:"22px",paddingRight:"20px"}}>£ 312.121</span></p>
+            <p className="roboto customH1">Colors <span className="roboto" style={{float:"right",fontWeight:"600",fontSize:"20px",paddingRight:"20px"}}>{price}</span></p>
+            
             <div className="customAllColorsDiv">
-              <p className="roboto customH1" style={{fontSize:"19px",paddingBottom:"0px"}}>Contrasts </p>
-               <ColorDivMain colorName1="White" colorName2="Black" colorCode1="#efefef" colorCode2="#000000" />
-               </div>
-               <div className="customAllColorsDiv">
-               <p className="roboto customH1" style={{fontSize:"19px",paddingBottom:"0px"}}>Metallic Shades </p>
-              <ColorDivMain colorName1="Black Metallic" colorName2="White Metallic" colorCode1="#000000" colorCode2="#eff5f9" />
-              <ColorDivMain colorName1="Volcano Grey" colorName2="Dolomite Silver" colorCode1="#252625" colorCode2="#c3cdd3" />
-              <ColorDivMain colorName1="Ice Grey" colorCode1="#DFE2E9"  />
-               </div>
-             <div className="customAllColorsDiv">
-            <p className="roboto customH1" style={{fontSize:"19px",paddingBottom:"0px"}}>Dreams </p>
-              <ColorDivMain colorName1="Provence" colorName2="Maderia Gold Metallic" colorCode1="#94849c" colorCode2="#b87c44" />
-              <ColorDivMain colorName1="Lugano Blue" colorName2="Gentain Blue Metallic" colorCode1="#3864b4" colorCode2="#00194b" />
+              <p className="roboto customH1" style={{fontSize:"19px",paddingBottom:"0px"}}> {model[id].name1.name} <span className="roboto" style={{float:"right",fontWeight:"500",fontSize:"18px",paddingRight:"20px"}}>{model[id].name1.price}</span></p>
+               {/** for each 2 create a ColorDivMain */}
+               {group1.map((row, index)=>(
+                <ColorDivMain key={index} title={model[id].title} price={model[id].name1.intPrice} onChecked={chooseColor} images1={row[0].images}  images2={row[1].images}  colorName1={row[0].color} colorName2={row[1].color} colorCode1={row[0].code} colorCode2={row[1].code} />
+               ))} 
             </div>
+            
+            
             <div className="customAllColorsDiv">
-            <p className="roboto customH1" style={{fontSize:"19px",paddingBottom:"0px"}}>Legends </p>
-              <ColorDivMain colorName1="Oak Green Metallic neo" colorName2="Crayon" colorCode1="#484c3c" colorCode2="#c7c7bf" />
-              <ColorDivMain colorName1="Montego Blue Metallic" colorName2="Aventurine Green Metallic" colorCode1="#387c94" colorCode2="#6c746c" />
-             </div>
-             <div style={{display:"flex",justifyContent:"center"}}>
-             <button style={{marginBottom:"5px", marginTop:"14px"}} id=" modelMarginTop" className="loginInput loginButton signupInput signupButton modelButton">Configure & Buy</button>
-             </div>
+               <p className="roboto customH1" style={{fontSize:"19px",paddingBottom:"0px"}}> {model[id].name2.name} <span className="roboto" style={{float:"right",fontWeight:"500",fontSize:"18px",paddingRight:"20px"}}>{model[id].name2.price}</span></p>
+               {group2.map((row, index)=>(
+                <ColorDivMain key={index} title={model[id].title} price={model[id].name2.intPrice}  onChecked={chooseColor} images1={row[0].images}  images2={row[1].images} colorName1={row[0].color} colorName2={row[1].color} colorCode1={row[0].code} colorCode2={row[1].code} />
+               ))}  
             </div>
+            
+            {group3?
+            <div className="customAllColorsDiv">
+              <p className="roboto customH1" style={{fontSize:"19px",paddingBottom:"0px"}}>{model[id].name3.name} <span className="roboto" style={{float:"right",fontWeight:"500",fontSize:"18px",paddingRight:"20px"}}>{model[id].name3.price}</span></p>
+              {group3.map((row, index)=>(
+                <ColorDivMain key={index} title={model[id].title} price={model[id].name3.intPrice}  onChecked={chooseColor} images1={row[0].images}  images2={row[1].images} colorName1={row[0].color} colorName2={row[1].color} colorCode1={row[0].code} colorCode2={row[1].code} />
+               ))} 
+            </div>
+            :null}
+            <div style={{display:"flex",justifyContent:"center"}}>
+            
+               <button  onClick={submit}  style={{marginBottom:"5px", marginTop:"14px"}} id=" modelMarginTop" className="loginInput loginButton signupInput signupButton modelButton">Configure & Buy</button>
+            
+            </div>
+            </div>
+
+
+
+
             </div>
     </div>
       <Footer />  

@@ -25,7 +25,7 @@
        display: block;
     }
     .homeContentCards{
-        min-width: 240px;
+        min-width: 200px;
         min-height: 490px;
         padding:20px;
         margin:20px;
@@ -88,7 +88,6 @@
     .homeDiv3{
         min-width: 280px;
         min-height: 100px;
-        margin: 15px;
         margin-top: 100px;
         margin-bottom: 100px;
     }
@@ -136,7 +135,7 @@
   
     }
     .homeInstagram4{
-        background-image: url("https://scontent-lhr8-2.xx.fbcdn.net/v/t39.30808-6/377558977_823517232895589_8892516296607361469_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=5f2048&_nc_ohc=93vd1JKeXH0Ab7d-HHx&_nc_ht=scontent-lhr8-2.xx&oh=00_AfAOEJp2iS2u384n0xJtxfrhI83n6xOpTxNkk_a2XsvLTQ&oe=6613C207");
+        background-image: url("https://racecarsdirect.com/content/UserImages/139822/809356.jpg?v=2");
       
     }
     .homeInstagram5{
@@ -202,6 +201,7 @@
         display: inline-flex;
         justify-content: center;
         min-width: 97%;
+        margin: 15px;
     }
     .homeInstaCard{
         margin-left: 5px;

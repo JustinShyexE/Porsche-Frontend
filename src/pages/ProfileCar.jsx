@@ -7,6 +7,7 @@ import {Carousel} from "react-responsive-carousel"
 function ProfileCar(){
     return(<div className="customMainBody">
     <Header />
+    <div style={{height:"65px",width:"50px"}}></div>
      <div className="profileBody">
          <div className="profileDiv">
             <h1 className="roboto profileWelcome">Welcome, Iustin Andrei Bacaila <hr ></hr></h1>

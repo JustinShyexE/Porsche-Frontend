@@ -1,7 +1,7 @@
 import React from "react";
 
-
 function CarouselDiv(props){
+  
   return ( <div className="modelCarouselDivStyle"> 
   <div className="modelImageCarDiv2">
       <img style={{ backgroundColor: "#DADBDD", paddingTop:"20px",paddingBottom:"20px"}} className="modelImageCar" src={props.image} />
@@ -19,7 +19,7 @@ function CarouselDiv(props){
       <p className="roboto modelStart_p modelMarginBotOff">{props.speed} mph</p>
       <p className="roboto modelDescription_p14px">Top Speed</p>
   </div>
-  <button style={{marginBottom:"20px"}} className="loginInput loginButton signupInput signupButton modelButton">Configure & Buy</button>
+ <a href={props.link}><button style={{marginBottom:"20px",cursor: "pointer"}} className="loginInput loginButton signupInput signupButton modelButton">Configure & Buy</button></a>
 </div>)
 }
 
