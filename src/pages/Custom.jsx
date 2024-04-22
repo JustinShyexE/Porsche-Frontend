@@ -7,13 +7,16 @@ import {useParams } from "react-router-dom";
 import taycan from "./car_colors/taycan";
 import p718 from "./car_colors/p718"
 import p911 from "./car_colors/p911"
-import axios from "axios"
+import specs from "./car_colors/specs"
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Model(){
+   const navigate = useNavigate();
+
   const [data, setData]=useState({})
-  
   let {modelId, id} = useParams();
-  
+  const [specss, setSpecs] = useState();
 
   if(modelId === "taycan"){var model = taycan}
   if(modelId=== "p718"){var model = p718}
@@ -26,11 +29,10 @@ function Model(){
    var group3 = model[id].group3;
   //add default
   const [urls, setURL] = useState(group1[0][0].images)
-  const [price, setPrice] = useState(model[id].price)
- // const [title, setTitle]=useState()
- // const [color, setColor]=useState()
+  const [totalPrice, setPrice] = useState(model[id].price)
+  const [status, setStatus] = useState(false)
+  
   //index1 of main array, index2 of child array that can be 0 or 1
-   
   function chooseColor(imagesURL, pricee, title, colors){
     if(imagesURL){
     setURL(imagesURL)
@@ -40,24 +42,30 @@ function Model(){
     )
    let first =  string.slice(0,1)
    let second = string.slice(1)
+   let totalPriceString = first+second
    setPrice(first+" "+second)
-  // setTitle(title)
-  // setColor(color)
+   setSpecs(findSpecs(model[id].title))
+   
    setData({
     title: title,
-    price: price,
+    price: totalPriceString,
     color: colors,
+    specs: specss,
     links: imagesURL
   })
   }
   }
+   function findSpecs(title){ //finding inside specs.js by title the specific car specs
+    console.log(title)
+    const result = specs.filter(specs => specs.title === title);
+    return result[0]
+   }
   
- 
   //sending data to the backend
-
   let submit=async(e)=>{
     e.preventDefault();
-    const newData= data
+    let newData= data
+    navigate("/my-vehicle")
     await fetch("http://localhost:5000/custom",{
     method: 'POST',
     headers: {
@@ -67,10 +75,25 @@ function Model(){
    })
 }
 
-
+//recieving data from backend
+useEffect(() =>{
+  fetch("/login-password").then(
+    response => response.json()
+   ).then(dataa =>{ 
+     console.log(dataa)
+      if(dataa.status===true){
+        setStatus(true)
+      }else if(dataa.status===false){
+        navigate("/login-password/"+modelId+"/"+id)
+      }
+     })
+ },[])
+  
+ 
+ if (status===true){
     return (<div className="customMainBody">
     <Header />
-    <div style={{height:"65px",width:"50px"}}></div>
+    <div className="underHeader"></div>  
       <div className="customBody">
         <h1 className="roboto customTitle">{model[id].title}</h1>
         <div className="customMainDivs">
@@ -88,7 +111,7 @@ function Model(){
             </div>
 
             <div className="customColorsDiv">
-            <p className="roboto customH1">Colors <span className="roboto" style={{float:"right",fontWeight:"600",fontSize:"20px",paddingRight:"20px"}}>{price}</span></p>
+            <p className="roboto customH1">Colors <span className="roboto" style={{float:"right",fontWeight:"600",fontSize:"20px",paddingRight:"20px"}}>{totalPrice}</span></p>
             
             <div className="customAllColorsDiv">
               <p className="roboto customH1" style={{fontSize:"19px",paddingBottom:"0px"}}> {model[id].name1.name} <span className="roboto" style={{float:"right",fontWeight:"500",fontSize:"18px",paddingRight:"20px"}}>{model[id].name1.price}</span></p>
@@ -116,18 +139,15 @@ function Model(){
             :null}
             <div style={{display:"flex",justifyContent:"center"}}>
             
-               <button  onClick={submit}  style={{marginBottom:"5px", marginTop:"14px"}} id=" modelMarginTop" className="loginInput loginButton signupInput signupButton modelButton">Configure & Buy</button>
+              <button  onClick={submit}  style={{marginBottom:"5px", marginTop:"14px"}} id=" modelMarginTop" className="loginInput loginButton signupInput signupButton modelButton">Configure & Buy</button>
             
             </div>
             </div>
 
-
-
-
             </div>
     </div>
       <Footer />  
-    </div>)
+    </div>)}
 }
 
 

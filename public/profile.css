@@ -15,7 +15,8 @@
     }
     .profileWelcome{
         font-weight: 350;
-        font-size: 19px;
+        font-size: 15px;
+        padding-left: 10px;
     }
     .profileSecondDiv{
         min-width: 300px;
@@ -24,9 +25,10 @@
     }
     #profileAnchorStyle{
         color: black;
-        font-size: 22px;
+        font-size: 18px;
         font-weight: 600;
         width: fit-content;
+        cursor: pointer;
     }
     #profileAnchorStyle::after{
         background-color: black;
@@ -70,6 +72,8 @@
     }
     .myvehicleImageDiv{
          padding: 10px;
+         padding-left: 2px;
+         padding-right: 2px;
          min-width: 300px;
          min-height: 200px;
     }
@@ -126,6 +130,7 @@
     .myvehicleSpan{
         font-size: 13px;
         font-weight: 300;
+        
     }
 }
 
@@ -143,7 +148,8 @@
     }
     .profileWelcome{
         font-weight: 350;
-        font-size: 19px;
+        font-size: 15px;
+        padding-left: 10px;
     }
     .profileSecondDiv{
         min-width: 280px;
@@ -152,9 +158,10 @@
     }
     #profileAnchorStyle{
         color: black;
-        font-size: 22px;
+        font-size: 19px;
         font-weight: 600;
         width: fit-content;
+        cursor: pointer;
     }
     #profileAnchorStyle::after{
         background-color: black;
@@ -201,6 +208,8 @@
     }
     .myvehicleImageDiv{
          padding: 10px;
+         padding-left: 2px;
+         padding-right: 2px;
          min-width: 300px;
          min-height: 200px;
     }
@@ -237,18 +246,21 @@
     }
     .myvehicleContentPrice{
        padding: 0px;
-       padding-left: 30px;
        min-height: 90px;
         display: block;
     }
     .myvehiclePrice{
         font-weight: 300;
         font-size: 15px;
+        display: flex;
+        justify-content: center;
     }
     .myvehicleTitle{
         padding-top: 20px;
         padding-bottom: 10px;
         font-size: 19px;
+        display: flex;
+        justify-content: center;
     }
     .myvehicleNr{
         font-size: 22px;
@@ -291,10 +303,20 @@
     }
     .profileWelcome{
          padding-bottom: 50px;
+         font-size: 19px;
     }
     .profileDiv{
         min-width: 55%;
     }
+    #profileAnchorStyle{
+        font-size: 22px;
+    }
+}
+@media only screen and (max-width: 830px){
+.profileMarginBottom{
+    margin: 5px;
+   margin-bottom: 30px;
+}
 }
 @media only screen and (min-width: 1600px){
     .myvehicleDescritpionDiv{

@@ -4,14 +4,12 @@ import { useState } from "react";
 import Input from "../components/InputInbox";
 import Footer from "../components/Footer";
 import Checkbox from '@mui/material/Checkbox';
-import { createTheme } from '@mui/material/styles';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormLabel from '@mui/material/FormLabel';
 import FormGroup from '@mui/material/FormGroup';
 import FormHelperText from '@mui/material/FormHelperText';
 import FormControl from '@mui/material/FormControl';
 import ClickableButton from "../components/ClickableButton";
-import Container from '@mui/material/Container';
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -26,6 +24,7 @@ function SignUp(){
   password1:"",
   password2:""
 })
+ // const [status, setStatus] = useState(false)
   const[match, setMatch] = useState(false)
   const [empty, setNotEmpty] = useState(false)
   function handleChangee(event){
@@ -63,10 +62,13 @@ function SignUp(){
      {/*Checkbox Code*/}
     
 
-
+     
      //sending data to backend with some requirments
      var submit=async(e)=>{
-      console.log("I'm clicked")
+      console.log("This is the usestate status: ", status)
+      setTimeout(function () {
+        window.location.reload();
+      }, 1000)
       if(data.password1 !== data.password2 || !data.password1 || !data.password2){
               setMatch(true)
       }
@@ -74,12 +76,13 @@ function SignUp(){
           setNotEmpty(true)
       }
       else{
-    
       setMatch(false)
       setNotEmpty(false)
      // e.preventDefault();
-      navigate("/login");
-      await fetch("http://localhost:5000/register",{
+     setTimeout(function () {
+      navigate("/login"); 
+      }, 2000)
+      await fetch("http://localhost:5000/signup",{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -88,25 +91,27 @@ function SignUp(){
      })
     }
     }
+    
 
-
-   {/*
-   //recieving data from backend
+   {/*  
+    //recieving data from backend
     useEffect(() =>{
-      fetch("/register").then(
+      fetch("/signup").then(
         response => response.json()
-      ).then(dataa =>{      
+      ).then(dataa =>{  
+           console.log("Recieving status from backend", dataa.status)    
            setStatus(dataa.status)
       })
     },[])
   */}
+
 
    
 
 
  return(<div className="mainSignupBody"> 
      <Header />
-     <div style={{height:"35px",width:"50px"}}></div>
+   <div className="underHeader"></div>  
    <div className="signupBody"> 
           <div className="signupContainer">
       <p className="roboto signupText signupTitle">Create your Porsche ID.</p>
@@ -156,10 +161,13 @@ Your key to all Porsche digital services and functions.</p>
       :null
       }
       
+      {/*
        {status?
-      <h1 className="MuiFormLabel-root MuiFormLabel-colorGrey Mui-error Mui-required css-sbdo8b-MuiFormLabel-root">Email already exist. Try <a href="/login" className="inputAnchor" style={{color:"red"}}>Log in</a>!</h1>
+        <h1 className="MuiFormLabel-root MuiFormLabel-colorGrey Mui-error Mui-required css-sbdo8b-MuiFormLabel-root">Email already exist. Try <a href="/login" className="inputAnchor" style={{color:"red"}}>Log in</a>!</h1>
       :null
     }
+      */} 
+    
       
   
       

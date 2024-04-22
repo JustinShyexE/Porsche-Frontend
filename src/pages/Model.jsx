@@ -4,13 +4,12 @@ import Footer from "../components/Footer";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import {Carousel} from "react-responsive-carousel"
 import CarouselDiv from "../components/CarouselDiv";
-import {useParams } from "react-router-dom";
+import {useNavigate, useParams } from "react-router-dom";
 
 
 function Model(props){
-   
+  
   const [data, setData]=useState([{}])
-
   const {id} = useParams();
 
   useEffect(() =>{
@@ -52,15 +51,16 @@ function Model(props){
             : rows2[rows2.length-1].push(key)) && rows2;
         }, []);  
     }
+  
 
 
   if(id!=="taycan" && id!=="cross-turismo" && id!=="sport-turismo" && id!=="cayman" && id!=="cayman-gt4-rs" && id!=="718-spyder-rs" && id!=="911-carrera" && id!=="911-turbo" && id!=="911-turbo-s" && id!=="911-dakar" && id!=="911-gt3"
   && id!=="911-gt3-rs" && id!=="911-st" && id!=="911-targa"
   )return (<h1>Error 404 Page not Found</h1>)
 
-  return(<div className="mainBody">
+    return(<div className="mainBody">
     <Header />
-    <div style={{height:"90px",width:"50px"}}></div>
+    <div className="underHeader"></div>  
     <div className="modelBody" >
         <div className="modelStartDiv">
             <div className="modelStartDivContent">
@@ -108,12 +108,11 @@ function Model(props){
         <div className="modelMiddle_ThirdDiv modelMiddle_ThirdDiv1">
              <Carousel centerMode={false} centerSlidePercentage={0} showStatus={false}  stopOnHover="true" swipeable={true} showThumbs={false} swipeScrollTolerance={2} emulateTouch={true}>    
              {/*Adding array[i] to CarouselDiv*/}
-             {data.models? data.models.map(model =>(
+             {data.models? data.models.map(model =>{
                   <div>
                      {createModel(model)}
                   </div>
-                 ))
-                :null
+                  }):null
                 }
                {/*Adding array[i] to CarouselDiv*/}
             </Carousel>

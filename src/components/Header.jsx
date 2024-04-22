@@ -72,7 +72,7 @@ function Header(props){
    :null}
 
    </div > : <div className="underHeaderOFF"></div>}
-   <a href="/login"><AccountCircleIcon style={{ color: 'white', fontSize: '30'}} className="accountIcon" /></a>
+   <a href="/login-password/email/password"><AccountCircleIcon style={{ color: 'white', fontSize: '30'}} className="accountIcon" /></a>
    <Icon />
    </div>
    </div>)

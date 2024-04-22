@@ -345,12 +345,11 @@
     }
     .homeDiv2{
         background-position: 50% 75%;
-        justify-content: start;
-        align-items: center;
+        
     }
     .homeDiv2P{
          width: 800px;
-         font-size: 35px;
+         font-size: 25px;
     }
     .homeAddPadding{
         margin-left: 20px;

@@ -2,18 +2,18 @@ import React, { useState } from "react";
 import porche from "./images/porche7.jpg"
 import High from "../components/HighligthingText"
 import Icon from "./images/email.png"
-import {useParams } from "react-router-dom";
+import {Await, useParams } from "react-router-dom";
 import axios from "axios";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Login(){
-
-  const {email} = useParams();
+  
   const navigate = useNavigate();
-
+  let {modelId, id} = useParams();
+ 
   const [data, setData] = useState({
-    email:email,
+    email:"",
     password:""
   })
   
@@ -27,6 +27,9 @@ function Login(){
 
   var submit=async(e)=>{
     e.preventDefault();
+    setTimeout(function () {
+      window.location.reload();
+    }, 1000)
     const dataa = data
     await fetch("http://localhost:5000/login-password",{
     method: 'POST',
@@ -36,19 +39,21 @@ function Login(){
     body: JSON.stringify(dataa)
    })
 }
- 
-
+  
   useEffect(() =>{
-   fetch("/login").then(
-    response => response.json()
-    ).then(dataa =>{      
+   fetch("/login-password").then(
+     response => response.json()
+    ).then(dataa =>{ 
+      console.log(dataa)
        if(dataa.status===true){
-        navigate("/profile")
-        window.location.reload();
+        if(modelId==="email" && id==="password"){
+          navigate("/profile")
+        }else{
+          navigate("/custom/"+modelId+"/"+id)
+        }
        }
-    })
+      })
   },[])
-
    
 
   return(<div className="loginBody"> 

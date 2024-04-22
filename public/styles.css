@@ -346,6 +346,10 @@ a{
   left: 460px;
   min-width: 250px;
 }
+.underHeader{
+  height:65px;
+  width: 50px
+}
 
 /*Adding Styled Scrollbar*/
 ::-webkit-scrollbar {
@@ -468,6 +472,9 @@ a{
 }
 
 @media (max-width: 830px){
+  .underHeader{
+    height:100px;
+  }
   .logo{
     margin-left: 0px;
   }
@@ -519,6 +526,9 @@ a{
   }
   .header{
     height: 120px;
+    }
+  .underHeader{
+      height:120px;
     }
   .btn {
       top: 40px;

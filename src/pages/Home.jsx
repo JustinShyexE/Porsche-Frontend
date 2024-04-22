@@ -16,19 +16,18 @@ import Video from "../components/Video";
 import Photo1 from "./images/instagram1.jpg"
 import Porche from "./images/porche.jpg"
 
+
 function Home(){
    const[pause, setPause]=useState(true)
-
    function onClickON(){
          setPause(true)
    }
    function onClickOFF(){
          setPause(false)
 }
-
   return(<div className="customMainBody"> 
      <Header />
-        <div style={{height:"65px",width:"50px"}}></div>
+      <div className="underHeader"></div>  
         <div className="homeBody">
            <div className="homePlayer">
              <ReactPlayer playIcon={true} playing={pause} loop={true} height="100%" width="100%"  muted={true} url={Video1} />
@@ -147,7 +146,7 @@ function Home(){
             <div className="homeDiv2">
             <div className="homeAddPadding">
                <p className="roboto homeCardTitle homeDiv2P">The the new GT3 models are here. Explore the driving experience whith the new engines</p>
-              <div className="homeDivCentering"><button style={{marginBottom:"5px", marginTop:"14px"}} id=" modelMarginTop" className="loginInput loginButton signupInput signupButton modelButton">Explore the range</button></div>
+               <div className="homeDivCentering"><button style={{marginBottom:"5px", marginTop:"14px"}} id=" modelMarginTop" className="loginInput loginButton signupInput signupButton modelButton">Explore the range</button></div>
             </div>
             </div>
         </div>
