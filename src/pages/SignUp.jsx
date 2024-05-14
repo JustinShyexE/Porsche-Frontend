@@ -65,10 +65,6 @@ function SignUp(){
      
      //sending data to backend with some requirments
      var submit=async(e)=>{
-      console.log("This is the usestate status: ", status)
-      setTimeout(function () {
-        window.location.reload();
-      }, 1000)
       if(data.password1 !== data.password2 || !data.password1 || !data.password2){
               setMatch(true)
       }
@@ -79,9 +75,7 @@ function SignUp(){
       setMatch(false)
       setNotEmpty(false)
      // e.preventDefault();
-     setTimeout(function () {
-      navigate("/login"); 
-      }, 2000)
+      navigate("/login-password/email/password"); 
       await fetch("http://localhost:5000/signup",{
       method: 'POST',
       headers: {

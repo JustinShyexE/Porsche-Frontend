@@ -12,11 +12,10 @@ import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 function Model(){
-   const navigate = useNavigate();
-
+  const navigate = useNavigate();
   const [data, setData]=useState({})
   let {modelId, id} = useParams();
-  const [specss, setSpecs] = useState();
+ 
 
   if(modelId === "taycan"){var model = taycan}
   if(modelId=== "p718"){var model = p718}
@@ -27,9 +26,12 @@ function Model(){
    var group1 = model[id].group1;
    var group2 = model[id].group2;
    var group3 = model[id].group3;
+    
   //add default
+  const findSpecss = findSpecs(model[id].title)
   const [urls, setURL] = useState(group1[0][0].images)
   const [totalPrice, setPrice] = useState(model[id].price)
+  const [specss, setSpecs] = useState(findSpecss);
   const [status, setStatus] = useState(false)
   
   //index1 of main array, index2 of child array that can be 0 or 1
@@ -44,19 +46,16 @@ function Model(){
    let second = string.slice(1)
    let totalPriceString = first+second
    setPrice(first+" "+second)
-   setSpecs(findSpecs(model[id].title))
-   
-   setData({
-    title: title,
+  setData({
+    title: model[id].title,
     price: totalPriceString,
-    color: colors,
     specs: specss,
     links: imagesURL
   })
   }
   }
-   function findSpecs(title){ //finding inside specs.js by title the specific car specs
-    console.log(title)
+ 
+  function findSpecs(title){ //finding inside specs.js by title the specific car specs
     const result = specs.filter(specs => specs.title === title);
     return result[0]
    }
@@ -64,7 +63,7 @@ function Model(){
   //sending data to the backend
   let submit=async(e)=>{
     e.preventDefault();
-    let newData= data
+    const newData= data
     navigate("/my-vehicle")
     await fetch("http://localhost:5000/custom",{
     method: 'POST',
@@ -80,15 +79,20 @@ useEffect(() =>{
   fetch("/login-password").then(
     response => response.json()
    ).then(dataa =>{ 
-     console.log(dataa)
       if(dataa.status===true){
         setStatus(true)
+        setData({
+          title: model[id].title,
+          price: totalPrice,
+          specs: specss,
+          links: urls
+        })
       }else if(dataa.status===false){
         navigate("/login-password/"+modelId+"/"+id)
       }
      })
  },[])
-  
+ 
  
  if (status===true){
     return (<div className="customMainBody">
@@ -117,7 +121,7 @@ useEffect(() =>{
               <p className="roboto customH1" style={{fontSize:"19px",paddingBottom:"0px"}}> {model[id].name1.name} <span className="roboto" style={{float:"right",fontWeight:"500",fontSize:"18px",paddingRight:"20px"}}>{model[id].name1.price}</span></p>
                {/** for each 2 create a ColorDivMain */}
                {group1.map((row, index)=>(
-                <ColorDivMain key={index} title={model[id].title} price={model[id].name1.intPrice} onChecked={chooseColor} images1={row[0].images}  images2={row[1].images}  colorName1={row[0].color} colorName2={row[1].color} colorCode1={row[0].code} colorCode2={row[1].code} />
+                <ColorDivMain key={index}  price={model[id].name1.intPrice} onChecked={chooseColor} images1={row[0].images}  images2={row[1].images}  colorName1={row[0].color} colorName2={row[1].color} colorCode1={row[0].code} colorCode2={row[1].code} />
                ))} 
             </div>
             
@@ -125,7 +129,7 @@ useEffect(() =>{
             <div className="customAllColorsDiv">
                <p className="roboto customH1" style={{fontSize:"19px",paddingBottom:"0px"}}> {model[id].name2.name} <span className="roboto" style={{float:"right",fontWeight:"500",fontSize:"18px",paddingRight:"20px"}}>{model[id].name2.price}</span></p>
                {group2.map((row, index)=>(
-                <ColorDivMain key={index} title={model[id].title} price={model[id].name2.intPrice}  onChecked={chooseColor} images1={row[0].images}  images2={row[1].images} colorName1={row[0].color} colorName2={row[1].color} colorCode1={row[0].code} colorCode2={row[1].code} />
+                <ColorDivMain key={index} price={model[id].name2.intPrice}  onChecked={chooseColor} images1={row[0].images}  images2={row[1].images} colorName1={row[0].color} colorName2={row[1].color} colorCode1={row[0].code} colorCode2={row[1].code} />
                ))}  
             </div>
             
@@ -133,7 +137,7 @@ useEffect(() =>{
             <div className="customAllColorsDiv">
               <p className="roboto customH1" style={{fontSize:"19px",paddingBottom:"0px"}}>{model[id].name3.name} <span className="roboto" style={{float:"right",fontWeight:"500",fontSize:"18px",paddingRight:"20px"}}>{model[id].name3.price}</span></p>
               {group3.map((row, index)=>(
-                <ColorDivMain key={index} title={model[id].title} price={model[id].name3.intPrice}  onChecked={chooseColor} images1={row[0].images}  images2={row[1].images} colorName1={row[0].color} colorName2={row[1].color} colorCode1={row[0].code} colorCode2={row[1].code} />
+                <ColorDivMain key={index} price={model[id].name3.intPrice}  onChecked={chooseColor} images1={row[0].images}  images2={row[1].images} colorName1={row[0].color} colorName2={row[1].color} colorCode1={row[0].code} colorCode2={row[1].code} />
                ))} 
             </div>
             :null}

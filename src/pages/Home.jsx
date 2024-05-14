@@ -25,12 +25,12 @@ function Home(){
    function onClickOFF(){
          setPause(false)
 }
-  return(<div className="customMainBody"> 
+  return(<div className="customMainBody" > 
      <Header />
       <div className="underHeader"></div>  
         <div className="homeBody">
            <div className="homePlayer">
-             <ReactPlayer playIcon={true} playing={pause} loop={true} height="100%" width="100%"  muted={true} url={Video1} />
+             <ReactPlayer playIcon={true} playing={pause} loop={true} height="100%" width="100%"  muted={false} url={Video1} />
              <div className="homePlayerButton">
               <div className="homePositionButton">
                     {!pause? 

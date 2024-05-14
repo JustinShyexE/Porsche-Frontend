@@ -27,5 +27,3 @@ export default function App(){
     )
 }
 
-
-//<Route path="/model/:id" element={<Model />} />

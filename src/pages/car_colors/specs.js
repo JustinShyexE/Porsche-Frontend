@@ -66,7 +66,7 @@ const specs = [
           speed:"149",
     },{
         id:9,
-          title: "Taycan Turbo Cross Turismo",
+          title: "Taycan Turbo S Cross Turismo",
            emissions:"Electrical consumption combined (model range): 22.0 - 19.1 kWh/100 km, CO2 emissions combined* (model range): 0 g/km",
           acceleration:"2.8",
           kw:"650",

@@ -30,13 +30,13 @@ useEffect(() =>{
    //recieving data from backend
 useEffect(() =>{
   fetch("/details").then(
-    response => response.json()
-   ).then(dataa =>{ 
-     console.log(dataa)
-     setName(dataa.name)
-     setDetails(dataa.details)
-     setImages(dataa.details.links)
-     setSpecs(dataa.details.specs)
+   response => response.json()
+  ).then(dataa =>{ 
+    console.log(dataa)
+    setName(dataa.name)
+    setDetails(dataa.details)
+    setImages(dataa.details.links)
+    setSpecs(dataa.details.specs)
      })
  },[])
 
@@ -64,44 +64,52 @@ useEffect(() =>{
                 <Button id="profileAnchorStyle" text="My profile" href="/profile" />
                 <Button id="profileAnchorStyle" text="My configuration" href="/my-vehicle"  />
                 </div>
-                 <div className="myvehicleDescritpionDiv">
-                 <div className="myvehicleImageDiv">
-                    <Carousel showStatus={false} emulateTouch={false} showArrows={true} showThumbs={false}>
-                        {images? images.map(image => (
-                             <div className="myvehicleImageDiv">
-                                  <img className="myvehicleImg" src={image} />
-                             </div>
-                        )):null}
-                    </Carousel>
-                  </div>
-                      <div className="myvehicleFlex2">
-                       <div className="profileMarginBottom" style={{backgroundColor:"#DADBDD", borderRadius:"20px"}}>
-                      <div className="myvehicleContent myvehicleContentPrice">
-                           <p className="roboto myvehicleTitle"> {details? details.title:null}</p>
-                           <p className="roboto myvehiclePrice">Paid {details? details.price.replace(/\s/g, ''):null} incl. VAT</p>
-                       </div>
-                       <div className="myvehicleContent">
-                           <div className="myvehicleFlex">
-                           <div className="myvehicleCarDetails">
-                              <p className="roboto myvehicleNr">{specs? specs.ps:null}<span className="myvehicleSpan">PS</span></p>
-                              <p className="roboto myvehicleSpan">Power (PS)</p>
-                           </div>
-                           <div className="myvehicleCarDetails">
-                              <p className="roboto myvehicleNr">{specs? specs.acceleration:null}<span className="myvehicleSpan">secs</span></p>
-                              <p className="roboto myvehicleSpan">Acceleration 0-62 mph (0-100 km/h)</p>
-                           </div>
-                           <div className="myvehicleCarDetails">
-                              <p className="roboto myvehicleNr">{specs? specs.speed:null}<span className="myvehicleSpan">mph</span></p>
-                              <p className="roboto myvehicleSpan">Top speed</p>
-                           </div>
-                           </div>
-                           <div className="myvehicleCarDetails2">
-                              <p className="myvehicleSpan">{specs? specs.emissions:null} Electric consumption {specs? specs.kw:0}kW</p>
-                           </div>
-                         </div>
-                         </div>
-                         </div>
-                </div>
+
+{details? details.map(detail=>(
+
+<div className="myvehicleDescritpionDiv">
+<div className="myvehicleImageDiv">
+   <Carousel showStatus={false} emulateTouch={false} showArrows={true} showThumbs={false}>
+       {detail? detail.links.map(image => (
+            <div className="myvehicleImageDiv">
+                 <img className="myvehicleImg" src={image} />
+            </div>
+       )) :null }
+   </Carousel>
+ </div>
+     <div className="myvehicleFlex2">
+      <div className="profileMarginBottom" style={{backgroundColor:"#DADBDD", borderRadius:"20px"}}>
+     <div className="myvehicleContent myvehicleContentPrice">
+          <p className="roboto myvehicleTitle"> {detail.title? detail.title :null}</p>
+          <p className="roboto myvehiclePrice">Paid {detail.price? detail.price :null} incl. VAT</p>
+      </div>
+      <div className="myvehicleContent">
+          <div className="myvehicleFlex">
+          <div className="myvehicleCarDetails">
+             <p className="roboto myvehicleNr">{detail.specs? detail.specs.ps :null}<span className="myvehicleSpan">PS</span></p>
+             <p className="roboto myvehicleSpan">Power (PS)</p>
+          </div>
+          <div className="myvehicleCarDetails">
+             <p className="roboto myvehicleNr">{detail.specs? detail.specs.acceleration :null}<span className="myvehicleSpan">secs</span></p>
+             <p className="roboto myvehicleSpan">Acceleration 0-62 mph (0-100 km/h)</p>
+          </div>
+          <div className="myvehicleCarDetails">
+             <p className="roboto myvehicleNr">{detail.specs? detail.specs.speed :null}<span className="myvehicleSpan">mph</span></p>
+             <p className="roboto myvehicleSpan">Top speed</p>
+          </div>
+          </div>
+          <div className="myvehicleCarDetails2">
+             <p className="myvehicleSpan">{detail.specs? detail.specs.emissions :null} Electric consumption {detail.specs? detail.specs.kw :null}kW</p>
+          </div>
+        </div>
+        </div>
+        </div>
+</div>
+
+ ))
+ :
+null
+}
               </div>
               </div>
               </div>
