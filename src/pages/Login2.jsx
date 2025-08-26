@@ -31,7 +31,7 @@ function Login(){
       window.location.reload();
     }, 1000)
     const dataa = data
-    await fetch("http://localhost:5000/login-password",{
+    await fetch("/login-password",{
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

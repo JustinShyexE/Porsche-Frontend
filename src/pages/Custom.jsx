@@ -26,6 +26,9 @@ function Model(){
    var group1 = model[id].group1;
    var group2 = model[id].group2;
    var group3 = model[id].group3;
+   console.log(group1)
+   console.log(group2)
+   console.log(group3)  
     
   //add default
   const findSpecss = findSpecs(model[id].title)
@@ -94,7 +97,6 @@ useEffect(() =>{
  },[])
  
  
- if (status===true){
     return (<div className="customMainBody">
     <Header />
     <div className="underHeader"></div>  
@@ -151,7 +153,7 @@ useEffect(() =>{
             </div>
     </div>
       <Footer />  
-    </div>)}
+    </div>)
 }
 
 

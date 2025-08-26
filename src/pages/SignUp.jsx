@@ -10,7 +10,6 @@ import FormGroup from '@mui/material/FormGroup';
 import FormHelperText from '@mui/material/FormHelperText';
 import FormControl from '@mui/material/FormControl';
 import ClickableButton from "../components/ClickableButton";
-import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 function SignUp(){
@@ -76,7 +75,7 @@ function SignUp(){
       setNotEmpty(false)
      // e.preventDefault();
       navigate("/login-password/email/password"); 
-      await fetch("http://localhost:5000/signup",{
+      await fetch("/signup",{
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

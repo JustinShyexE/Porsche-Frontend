@@ -35,7 +35,7 @@ useEffect(() =>{
  let submit=async(e)=>{
     e.preventDefault();
     navigate("/")
-    await fetch("http://localhost:5000/signout",{
+    await fetch("/signout",{
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
