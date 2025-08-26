@@ -68,7 +68,7 @@ function Model(){
     e.preventDefault();
     const newData= data
     navigate("/my-vehicle")
-    await fetch("http://localhost:5000/custom",{
+    await fetch("https://porsche-backend-mmny.onrender.com/custom",{
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -79,7 +79,7 @@ function Model(){
 
 //recieving data from backend
 useEffect(() =>{
-  fetch("/login-password").then(
+  fetch("https://porsche-backend-mmny.onrender.com/login-password").then(
     response => response.json()
    ).then(dataa =>{ 
       if(dataa.status===true){

@@ -12,7 +12,7 @@ const [name, setName]=useState()
 
 //checking if user is logged in
 useEffect(() =>{
-    fetch("/isLoggedIn").then(
+    fetch("https://porsche-backend-mmny.onrender.com/isLoggedIn").then(
       response => response.json()
      ).then(logged =>{ 
          if(logged.status===false){
@@ -23,7 +23,7 @@ useEffect(() =>{
 
  //recieving data from backend
 useEffect(() =>{
-    fetch("/details").then(
+    fetch("https://porsche-backend-mmny.onrender.com/details").then(
       response => response.json()
      ).then(dataa =>{ 
        console.log(dataa)
@@ -35,7 +35,7 @@ useEffect(() =>{
  let submit=async(e)=>{
     e.preventDefault();
     navigate("/")
-    await fetch("/signout",{
+    await fetch("https://porsche-backend-mmny.onrender.com/signout",{
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

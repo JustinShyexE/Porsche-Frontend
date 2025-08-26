@@ -31,7 +31,7 @@ function Login(){
       window.location.reload();
     }, 1000)
     const dataa = data
-    await fetch("/login-password",{
+    await fetch("https://porsche-backend-mmny.onrender.com/login-password",{
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -41,7 +41,7 @@ function Login(){
 }
   
   useEffect(() =>{
-   fetch("/login-password").then(
+   fetch("https://porsche-backend-mmny.onrender.com/login-password").then(
      response => response.json()
     ).then(dataa =>{ 
       console.log(dataa)

@@ -12,7 +12,7 @@ function Model(props) {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch("/model/" + id)
+    fetch("https://porsche-backend-mmny.onrender.com/model/" + id)
       .then((response) => response.json())
       .then((dataa) => {
         setData(dataa);

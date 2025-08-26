@@ -12,10 +12,11 @@ function ProfileCar() {
   const [name, setName] = useState();
   const [images, setImages] = useState([]);
   const [specs, setSpecs] = useState({});
+  const [data, setData] = useState(false);
 
   //checking if user is logged in
   useEffect(() => {
-    fetch("/isLoggedIn")
+    fetch("https://porsche-backend-mmny.onrender.com/isLoggedIn")
       .then((response) => response.json())
       .then((logged) => {
         if (logged.status === false) {
@@ -26,14 +27,14 @@ function ProfileCar() {
 
   //recieving data from backend
   useEffect(() => {
-    fetch("/details")
+    fetch("https://porsche-backend-mmny.onrender.com/details")
       .then((response) => response.json())
       .then((dataa) => {
         console.log(dataa);
         setName(dataa.name);
         setDetails(dataa.details);
-        setImages(dataa.details.links);
-        setSpecs(dataa.details.specs);
+        if (dataa.details) setImages(dataa.details.links);
+        if (dataa.details) setSpecs(dataa.details.specs);
       });
   }, []);
 
@@ -41,13 +42,17 @@ function ProfileCar() {
   let submit = async (e) => {
     e.preventDefault();
     navigate("/");
-    await fetch("/signout", {
+    await fetch("https://porsche-backend-mmny.onrender.com/signout", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ status: false }),
     });
+  };
+   const handleReload = (e) => {
+    e.preventDefault(); 
+    window.location.reload(); 
   };
 
   return (
@@ -70,11 +75,12 @@ function ProfileCar() {
             <div style={{ display: "flex", gap: "20px", minWidth: "200px", minHeight: "70px" }}>
               <Button id="profileAnchorStyle" text="My profile" href="/profile" />
               <Button id="profileAnchorStyle" text="My configuration" href="/my-vehicle" />
+              <span  onClick= {handleReload}><Button id="profileAnchorStyle" text="Update Collection" /></span>
             </div>
 
             {details
               ? details.map((detail, index) => (
-                  <div  key={index} className="myvehicleDescritpionDiv">
+                  <div key={index} className="myvehicleDescritpionDiv">
                     <div className="myvehicleImageDiv">
                       <Carousel
                         showStatus={false}
