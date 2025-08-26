@@ -3,7 +3,6 @@ import Button from "./Button";
 import Button2 from "./Button2";
 import Button2B from "./Button2B";
 import Icon from "./Icon";
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import { useState } from "react";
 
 
@@ -72,7 +71,7 @@ function Header(props){
    :null}
 
    </div > : <div className="underHeaderOFF"></div>}
-   <a href="/login-password/email/password"><AccountCircleIcon style={{ color: 'white', fontSize: '30'}} className="accountIcon" /></a>
+   <a href="/login-password/email/password">{/*<AccountCircleIcon style={{ color: 'white', fontSize: '30'}} className="accountIcon" />*/}</a>
    <Icon />
    </div>
    </div>)

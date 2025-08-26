@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import LocationOnIcon from '@material-ui/icons/LocationOn';
+//import LocationOnIcon from '@material-ui/icons/LocationOn';
 
 function Icon(props){
 const[click, setClick]=useState(false)
@@ -17,7 +17,7 @@ const[click, setClick]=useState(false)
     }
   
     return (<div>
-       <div onMouseOver={SetClickON} > <LocationOnIcon  className="accountIcon accountIconPosition accountIconHome" style={{ color: 'white', fontSize: '29'}} /></div>
+       <div onMouseOver={SetClickON} > {/*<LocationOnIcon  className="accountIcon accountIconPosition accountIconHome" style={{ color: 'white', fontSize: '29'}} />*/}</div>
      {click?<div onMouseEnter={SetClickON} onMouseLeave={SetClickOFF} className="locationON"> 
      <p className="title">Find a Dealer </p>
      <div className="locationInputPos title_inputSpace">
