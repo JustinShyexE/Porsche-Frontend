@@ -73,8 +73,8 @@ function ProfileCar() {
             </div>
 
             {details
-              ? details.map((detail) => (
-                  <div className="myvehicleDescritpionDiv">
+              ? details.map((detail, index) => (
+                  <div  key={index} className="myvehicleDescritpionDiv">
                     <div className="myvehicleImageDiv">
                       <Carousel
                         showStatus={false}
@@ -83,8 +83,8 @@ function ProfileCar() {
                         showThumbs={false}
                       >
                         {detail
-                          ? detail.links.map((image) => (
-                              <div className="myvehicleImageDiv">
+                          ? detail.links.map((image, index) => (
+                              <div key={image} className="myvehicleImageDiv">
                                 <img className="myvehicleImg" src={image} />
                               </div>
                             ))

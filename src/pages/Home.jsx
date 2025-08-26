@@ -1,5 +1,3 @@
-import React from "react";
-import ReactDOM from "react-dom";
 import Header from "../components/Header";
 import { useState } from "react";
 import Footer from "../components/Footer"
@@ -28,7 +26,7 @@ function Home(){
       <div className="underHeader"></div>  
         <div className="homeBody">
            <div className="homePlayer">
-             <ReactPlayer playIcon={true} playing={pause} loop={true} height="100%" width="100%"  muted={true} url={Video1} />
+             <ReactPlayer  playing={pause} loop={true} height="100%" width="100%"  muted={true} url={Video1} />
              <div className="homePlayerButton">
               <div className="homePositionButton">
                     {!pause? 

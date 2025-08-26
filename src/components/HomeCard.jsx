@@ -1,6 +1,3 @@
-import React from "react";
-
-
 
 function HomeCard(props){
        return(<div className="homeDivCentering"> <div className="homeContentCards homeCenterEnd" style={{backgroundImage: props.url,

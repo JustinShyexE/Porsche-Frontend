@@ -106,8 +106,8 @@ useEffect(() =>{
         <div className="customCarouselDiv">
          <Carousel showStatus={false} emulateTouch={true} showArrows={false} thumbWidth={100}>
                 {urls? 
-                 urls.map(link=>(
-                 <div className="customCarouselImg">
+                 urls.map((link, index)=>(
+                 <div key={index} className="customCarouselImg">
                    <img className="customCarouselImg" src={link} />
                  </div>
               ))
@@ -123,7 +123,7 @@ useEffect(() =>{
               <p className="roboto customH1" style={{fontSize:"19px",paddingBottom:"0px"}}> {model[id].name1.name} <span className="roboto" style={{float:"right",fontWeight:"500",fontSize:"18px",paddingRight:"20px"}}>{model[id].name1.price}</span></p>
                {/** for each 2 create a ColorDivMain */}
                {group1.map((row, index)=>(
-                <ColorDivMain key={index}  price={model[id].name1.intPrice} onChecked={chooseColor} images1={row[0].images}  images2={row[1].images}  colorName1={row[0].color} colorName2={row[1].color} colorCode1={row[0].code} colorCode2={row[1].code} />
+                <ColorDivMain key={`${row[0].code}-${row[1].code}`}  price={model[id].name1.intPrice} onChecked={chooseColor} images1={row[0].images}  images2={row[1].images}  colorName1={row[0].color} colorName2={row[1].color} colorCode1={row[0].code} colorCode2={row[1].code} />
                ))} 
             </div>
             
@@ -131,7 +131,7 @@ useEffect(() =>{
             <div className="customAllColorsDiv">
                <p className="roboto customH1" style={{fontSize:"19px",paddingBottom:"0px"}}> {model[id].name2.name} <span className="roboto" style={{float:"right",fontWeight:"500",fontSize:"18px",paddingRight:"20px"}}>{model[id].name2.price}</span></p>
                {group2.map((row, index)=>(
-                <ColorDivMain key={index} price={model[id].name2.intPrice}  onChecked={chooseColor} images1={row[0].images}  images2={row[1].images} colorName1={row[0].color} colorName2={row[1].color} colorCode1={row[0].code} colorCode2={row[1].code} />
+                <ColorDivMain key={`${row[0].code}-${row[1].code}`} price={model[id].name2.intPrice}  onChecked={chooseColor} images1={row[0].images}  images2={row[1].images} colorName1={row[0].color} colorName2={row[1].color} colorCode1={row[0].code} colorCode2={row[1].code} />
                ))}  
             </div>
             
@@ -139,7 +139,7 @@ useEffect(() =>{
             <div className="customAllColorsDiv">
               <p className="roboto customH1" style={{fontSize:"19px",paddingBottom:"0px"}}>{model[id].name3.name} <span className="roboto" style={{float:"right",fontWeight:"500",fontSize:"18px",paddingRight:"20px"}}>{model[id].name3.price}</span></p>
               {group3.map((row, index)=>(
-                <ColorDivMain key={index} price={model[id].name3.intPrice}  onChecked={chooseColor} images1={row[0].images}  images2={row[1].images} colorName1={row[0].color} colorName2={row[1].color} colorCode1={row[0].code} colorCode2={row[1].code} />
+                <ColorDivMain key={`${row[0].code}-${row[1].code}`} price={model[id].name3.intPrice}  onChecked={chooseColor} images1={row[0].images}  images2={row[1].images} colorName1={row[0].color} colorName2={row[1].color} colorCode1={row[0].code} colorCode2={row[1].code} />
                ))} 
             </div>
             :null}
