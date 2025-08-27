@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import placeholder from '../pages/images/placeholder.png';
 //import LocationOnIcon from '@material-ui/icons/LocationOn';
 
 function Icon(props){
@@ -17,7 +18,8 @@ const[click, setClick]=useState(false)
     }
   
     return (<div>
-       <div onMouseOver={SetClickON} > {/*<LocationOnIcon  className="accountIcon accountIconPosition accountIconHome" style={{ color: 'white', fontSize: '29'}} />*/}</div>
+      {/*<LocationOnIcon  className="accountIcon accountIconPosition accountIconHome" style={{ color: 'white', fontSize: '29'}} />*/}
+       <div onMouseOver={SetClickON} > <img className="accountIcon accountIconPosition accountIconHome" src ={placeholder} alt='locationicon' /> </div>
      {click?<div onMouseEnter={SetClickON} onMouseLeave={SetClickOFF} className="locationON"> 
      <p className="title">Find a Dealer </p>
      <div className="locationInputPos title_inputSpace">

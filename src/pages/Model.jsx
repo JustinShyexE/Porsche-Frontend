@@ -75,7 +75,7 @@ function Model(props) {
         <div className="modelStartDiv">
           <div className="modelStartDivContent">
             <div className="modelImageLogoDiv">
-              <img className="modelImageLogo" src={data.logo} />
+              <img className="modelImageLogo" src="https://i.imgur.com/4fiz0xZ.png" />
             </div>
           </div>
           <div className="modelStartDivContent">

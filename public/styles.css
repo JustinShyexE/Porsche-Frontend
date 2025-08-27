@@ -540,7 +540,7 @@ a{
     .btn1_position{
       position: relative;
       top: 35px;
-      left: 80px;
+      left: 10%;
       display: inline-flex;
       gap: 20px;
     }

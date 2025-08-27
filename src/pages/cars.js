@@ -44,7 +44,7 @@ const cars=[
        {
         id:9,
         mainModel: "911",
-        image: "https://files.porsche.com/filestore/image/multimedia/none/911-tus-modelimage-sideshot/model/930894f1-6214-11ea-80c8-005056bbdc38/porsche-model.png",
+        image: "https://nav.porsche.com/00BC524/model-assets/1920/911-turbo.webp",
         model: "911 Turbo S Models",
         link:"/model/911-turbo-s"
        },
